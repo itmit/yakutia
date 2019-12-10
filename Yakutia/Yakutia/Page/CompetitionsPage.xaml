@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Page.CompetitionsPage"
+             Title="Конкурсы">
+    <ContentPage.Content>
+        <!--Страница конкурсы-->
+        <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="20,20,20,0" SelectionMode="None">
+            <ListView.Header>
+                <Label TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Конкурсы на "></Span>
+                                <Span Text="2019"></Span>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ListView.Header>
+            <ListView.ItemsSource>
+                <x:String>000000</x:String>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Margin="5,10" Text="Конкурс" TextColor="Black"></Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

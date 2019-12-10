@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Page.NewsPage"
+             Title="Новости">
+    <ContentPage.Content>
+        <!--Страница списка новостей-->
+        <ListView Margin="10,5" SelectionMode="None" VerticalScrollBarVisibility="Never" HasUnevenRows="True">
+            <ListView.ItemsSource>
+                <x:String>00000000000000000000</x:String>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <Grid ColumnSpacing="10" Margin="0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Frame IsClippedToBounds="True" Padding="0" CornerRadius="10" Grid.Column="0" VerticalOptions="Center">
+                                <Image Source="picture.jpg" Aspect="AspectFill" WidthRequest="50" HeightRequest="50"></Image>
+                            </Frame>
+                            <StackLayout Spacing="0" Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Заголовок новости" TextColor="Black" FontSize="16"></Label>
+                                <Label Text="Описание новости"></Label>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

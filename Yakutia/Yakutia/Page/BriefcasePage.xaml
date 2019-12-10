@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Page.BriefcasePage"
+             Title="Успешные кейсы/практики">
+    <ContentPage.Content>
+        <!--Страница успешные кейсы/практики-->
+        <ListView Margin="10,5" SelectionMode="None" VerticalScrollBarVisibility="Never" HasUnevenRows="True">
+            <ListView.ItemsSource>
+                <x:String>00000000000</x:String>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="5,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" ColumnSpacing="15">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame IsClippedToBounds="True" Padding="0" CornerRadius="10" Grid.Column="0" VerticalOptions="Center">
+                                    <Image Source="picture.jpg" Aspect="AspectFill" WidthRequest="70"></Image>
+                                </Frame>
+                                <StackLayout Spacing="0" Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Заголовок" TextColor="Black" FontSize="16"></Label>
+                                    <Label Text="Контакты"></Label>
+                                </StackLayout>
+                            </Grid>
+                            <Label Grid.Row="1" Text="Основной текст Основной текст Основной текст Основной текст Основной текст Основной текст Основной текст"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

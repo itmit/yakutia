@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Page.GrantsPage"
+             Title="Президентские гранты">
+    <ContentPage.Content>
+        <!--Страница президентские гранты-->
+        <StackLayout Margin="20">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="Label" TargetType="Label">
+                        <Setter Property="TextColor" Value="Black"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="HorizontalOptions" Value="Center"/>
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Label Text="О конкурсе" Style="{StaticResource Label}"/>
+            <Label Text="Детальная информация"></Label>
+            <Label Text="Материалы по участию" Style="{StaticResource Label}"></Label>
+            <Label Text="Детальная информация"></Label>
+            <Label Text="Проекты с РС(Я)" Style="{StaticResource Label}"></Label>
+            <Label Text="Детальная информация"></Label>
+            <Label Text="Ссылка" Style="{StaticResource Label}"></Label>
+            <Label Text="Ссылка"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
