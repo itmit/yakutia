@@ -8,29 +8,57 @@
              Title="Конкурсы">
     <ContentPage.Content>
         <!--Страница конкурсы-->
-        <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="20,20,20,0" SelectionMode="None">
-            <ListView.Header>
-                <Label TextColor="Black" FontAttributes="Bold" HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Конкурсы на "></Span>
-                                <Span Text="2019"></Span>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </ListView.Header>
-            <ListView.ItemsSource>
-                <x:String>000000</x:String>
-            </ListView.ItemsSource>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label Margin="5,10" Text="Конкурс" TextColor="Black"></Label>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <ScrollView>
+            <StackLayout Margin="20,20,20,0">
+                <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="20,20,20,0" SelectionMode="None" ItemsSource="{Binding Briefcase}" Grid.Row="0">
+                    <ListView.Header>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <BoxView BackgroundColor="Black" HeightRequest="5" WidthRequest="5" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center"></BoxView>
+                            <Label Text="Региональные" TextColor="Black" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Margin="5,10" TextColor="Black">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Конкурс "></Span>
+                                                <Span Text="{Binding Number}"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="20,20,20,0" SelectionMode="None" ItemsSource="{Binding Briefcase}" Grid.Row="1">
+                    <ListView.Header>
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+                            <BoxView BackgroundColor="Black" HeightRequest="5" WidthRequest="5" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center"></BoxView>
+                            <Label Text="Федеральные" TextColor="Black" FontAttributes="Bold"></Label>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label Margin="5,10" TextColor="Black">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Конкурс "></Span>
+                                                <Span Text="{Binding Number}"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

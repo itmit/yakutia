@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Yakutia.ViewModels;
 
 namespace Yakutia.Page
 {
@@ -15,6 +16,7 @@ namespace Yakutia.Page
         public NewsPage()
         {
             InitializeComponent();
+            BindingContext = new BriefcaseViewModel();
         }
 
         private void ViewCell_Tapped(object sender, EventArgs e)

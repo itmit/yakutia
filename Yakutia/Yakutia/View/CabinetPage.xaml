@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:local="clr-namespace:Yakutia.Page"
              mc:Ignorable="d"
-             x:Class="Yakutia.MainPage">
+             x:Class="Yakutia.CabinetPage"
+                  NavigationPage.HasNavigationBar="False">
+    <!--Представление кабинета-->
     <MasterDetailPage.Master>
         <local:MenuPage Title=" "></local:MenuPage>
     </MasterDetailPage.Master>

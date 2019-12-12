@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Yakutia.Models;
-using Yakutia.ViewModels;
 
 namespace Yakutia.Page
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Question_answerPage : ContentPage
+    public partial class RegistrationPage : ContentPage
     {
-        public Question_answerPage()
+        public RegistrationPage()
         {
             InitializeComponent();
-            BindingContext = new ResponseViewModel();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CabinetPage());
         }
     }
 }
