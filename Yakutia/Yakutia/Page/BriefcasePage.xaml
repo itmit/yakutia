@@ -8,7 +8,7 @@
              Title="Успешные кейсы/практики">
     <ContentPage.Content>
         <!--Страница успешные кейсы/практики-->
-        <ListView Margin="10,5" SelectionMode="None" VerticalScrollBarVisibility="Never" HasUnevenRows="True" ItemsSource="{Binding Briefcase}">
+        <ListView Margin="10,5" SelectionMode="None" VerticalScrollBarVisibility="Never" HasUnevenRows="True" ItemsSource="{Binding Briefcase}" ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

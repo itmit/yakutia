@@ -8,7 +8,7 @@
              Title="Правовые памятки">
     <ContentPage.Content>
         <!--Страница правовые памятки-->
-        <StackLayout Margin="20">
+        <StackLayout Margin="20" Spacing="10">
             <StackLayout.Resources>
                 <ResourceDictionary>
                     <Style x:Key="Label" TargetType="Label">
@@ -18,7 +18,7 @@
                 </ResourceDictionary>
             </StackLayout.Resources>
             <Label Text="1. Регистрация НКО" Style="{StaticResource Label}"></Label>
-            <StackLayout Margin="10,0">
+            <StackLayout Margin="10,0" Spacing="10">
                 <Label Text="1.1 Создание и регистрация НКО">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
@@ -56,7 +56,7 @@
                 </Label.GestureRecognizers>
             </Label>
             <Label Text="3. Отчетность НКО" Style="{StaticResource Label}"></Label>
-            <StackLayout Margin="10,0">
+            <StackLayout Margin="10,0" Spacing="10">
                 <Label Text="3.1 Казачьи общества">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_7" NumberOfTapsRequired="1"/>

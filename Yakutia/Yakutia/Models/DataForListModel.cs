@@ -9,6 +9,13 @@ namespace Yakutia.Models
     /// </summary>
     public class DataForListModel
     {
+
+        public string TextAnswer 
+        { 
+            get; 
+            set; 
+        }
+
         public string TextResponse 
         { 
             get; 

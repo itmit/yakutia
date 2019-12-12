@@ -11,17 +11,12 @@ using Yakutia.ViewModels;
 namespace Yakutia.Page
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BriefcasePage : ContentPage
+    public partial class CompetitionsDetailPage : ContentPage
     {
-        public BriefcasePage()
+        public CompetitionsDetailPage()
         {
             InitializeComponent();
             BindingContext = new BriefcaseViewModel();
-        }
-
-        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            Navigation.PushAsync(new NewsDetailPage());
         }
     }
 }

@@ -8,57 +8,17 @@
              Title="Конкурсы">
     <ContentPage.Content>
         <!--Страница конкурсы-->
-        <ScrollView>
-            <StackLayout Margin="20,20,20,0">
-                <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="20,20,20,0" SelectionMode="None" ItemsSource="{Binding Briefcase}" Grid.Row="0">
-                    <ListView.Header>
-                        <StackLayout Orientation="Horizontal" Spacing="15">
-                            <BoxView BackgroundColor="Black" HeightRequest="5" WidthRequest="5" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center"></BoxView>
-                            <Label Text="Региональные" TextColor="Black" FontAttributes="Bold"></Label>
-                        </StackLayout>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Margin="5,10" TextColor="Black">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="Конкурс "></Span>
-                                                <Span Text="{Binding Number}"></Span>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="20,20,20,0" SelectionMode="None" ItemsSource="{Binding Briefcase}" Grid.Row="1">
-                    <ListView.Header>
-                        <StackLayout Orientation="Horizontal" Spacing="15">
-                            <BoxView BackgroundColor="Black" HeightRequest="5" WidthRequest="5" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center"></BoxView>
-                            <Label Text="Федеральные" TextColor="Black" FontAttributes="Bold"></Label>
-                        </StackLayout>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Margin="5,10" TextColor="Black">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <FormattedString.Spans>
-                                                <Span Text="Конкурс "></Span>
-                                                <Span Text="{Binding Number}"></Span>
-                                            </FormattedString.Spans>
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                </Label>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
-        </ScrollView>
+        <StackLayout Margin="20" Spacing="25">
+            <Label Text="• РЕГИОНАЛЬНЫЕ" TextColor="Black" FontAttributes="Bold" FontSize="16">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="• ФЕДЕРАЛЬНЫЕ" TextColor="Black" FontAttributes="Bold" FontSize="16">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

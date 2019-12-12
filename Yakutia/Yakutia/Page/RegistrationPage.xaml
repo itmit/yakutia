@@ -11,10 +11,19 @@
             <Entry Placeholder="Имя"></Entry>
             <Entry Placeholder="Фамилия"></Entry>
             <Entry Placeholder="E-mail"></Entry>
-            <Picker Title="Пользователь"></Picker>
+            <Picker Title="Пользователь">
+                <Picker.Items>
+                    <x:String>специалист</x:String>
+                    <x:String>представитель нко</x:String>
+                    <x:String>обычный пользователь</x:String>
+                </Picker.Items>
+            </Picker>
             <Entry Placeholder="Телефон"></Entry>
             <Entry Placeholder="Пароль"></Entry>
-            <Button Text="Зарегестрироваться" Clicked="Button_Clicked"></Button>
+            <StackLayout>
+                <Button Text="Зарегистрироваться" Clicked="Button_Clicked"></Button>
+                <Button Text="Войти" Clicked="Button_Clicked_1"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

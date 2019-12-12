@@ -11,8 +11,10 @@
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
             <Entry Placeholder="Введите E-mail"></Entry>
             <Entry Placeholder="Введите пароль" IsPassword="True"/>
-            <Button Text="Войти" Clicked="Button_Clicked"></Button>
-            <Button Text="Регистрация" Clicked="Button_Clicked_1"></Button>
+            <StackLayout>
+                <Button Text="Войти" Clicked="Button_Clicked"></Button>
+                <Button Text="Регистрация" Clicked="Button_Clicked_1"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
