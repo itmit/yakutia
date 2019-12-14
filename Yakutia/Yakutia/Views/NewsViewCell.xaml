@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Views.NewsViewCell">
+  <ViewCell.View>
+        <StackLayout>
+            <Grid Margin="0,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame IsClippedToBounds="True" Padding="0" CornerRadius="10" Grid.Column="0" VerticalOptions="Center">
+                        <forms:CachedImage Source="{Binding ImageSource}" Aspect="AspectFill" WidthRequest="70"/>
+                    </Frame>
+                    <Label TextColor="Black" FontSize="16" Grid.Column="1" VerticalOptions="Center" Text="{Binding Title}"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
+  </ViewCell.View>
+</ViewCell>

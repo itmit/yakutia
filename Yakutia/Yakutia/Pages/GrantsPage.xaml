@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Pages.GrantsPage"
+             Title="Президентские гранты">
+    <ContentPage.Content>
+        <!--Страница президентские гранты-->
+        <ScrollView Margin="20">
+            <StackLayout Spacing="10">
+                <StackLayout.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="Label" TargetType="Label">
+                            <Setter Property="TextColor" Value="Black"/>
+                            <Setter Property="FontSize" Value="12"/>
+                        </Style>
+                    </ResourceDictionary>
+                </StackLayout.Resources>
+                <Label Text="О конкурсе" Style="{StaticResource Label}" FontSize="16"/>
+                <Image Source="grant.png" Aspect="AspectFill" HorizontalOptions="Center" Margin="0,15"></Image>
+                <Label Text="Фонд проводит конкурсы среди некоммерческих организаций по следующим направлениям:" TextDecorations="Underline" Style="{StaticResource Label}"></Label>
+                <StackLayout Margin="0,5">
+                    <Label Text="•	Социальное обслуживание, социальная поддержка и защита граждан" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Охрана здоровья граждан, пропаганда здорового образа жизни" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Поддержка семьи, материнства, отцовства и детства" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Поддержка проектов в области науки, образования, просвещения" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Поддержка проектов в области культуры и искусства" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Сохранение исторической памяти" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Защита прав и свобод человека и гражданина, в том числе защита прав заключенных" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Охрана окружающей среды и защита животных" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Укрепление межнационального и межрелигиозного согласия" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Развитие общественной дипломатии и поддержка соотечественников" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Развитие институтов гражданского общества" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	Выявление и поддержка молодых талантов в области культуры и искусства" Style="{StaticResource Label}"></Label>
+                </StackLayout>
+                <Label Text="Участниками конкурса могут быть некоммерческие организации:" TextDecorations="Underline" Style="{StaticResource Label}" Margin="5,0"></Label>
+                <StackLayout Margin="5,5">
+                    <Label Text='•	зарегистрированные не позднее чем за год до окончания приема заявок, а при запросе гранта до 500 тыс. рублей (кроме "ресурсных центров") - не позднее чем за полгода' Style="{StaticResource Label}"></Label>
+                    <Label Text="•	для некоммерческих организаций, действующих от 1 года, размер суммы гранта не ограничен" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	не находящиеся в процессе ликвидации, банкротства, под действием решения суда о приостановлении деятельности" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	не имеющие просроченной задолженности по налогам и иным платежам в бюджет" Style="{StaticResource Label}"></Label>
+                    <Label Text="•	не имеющие среди учредителей государственных органов и органов местного самоуправления" Style="{StaticResource Label}"></Label>
+                </StackLayout>
+                <Label Text="Материалы по участию" Style="{StaticResource Label}" FontSize="16"></Label>
+                <Grid HorizontalOptions="Center" ColumnSpacing="25">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Column="0">
+                        <Label Text="для&#10;участников" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextDecorations="Underline" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                    <Frame Grid.Column="1">
+                        <Label Text="для&#10;победителей" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" TextDecorations="Underline" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </Grid>
+                <Label Text="Реестр победителей с РС(Я)" Style="{StaticResource Label}" FontSize="16"></Label>
+                <Label Text="Подробная информация о конкурсе, проектах доступна на официальном сайте:" Style="{StaticResource Label}" FontSize="16"></Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Ссылка на сайт "></Span>
+                                <Span Text="президентскиегранты.рф" TextColor="Blue" TextDecorations="Underline"></Span>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
