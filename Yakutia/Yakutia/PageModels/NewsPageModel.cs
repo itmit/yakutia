@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using FreshMvvm;
 using Xamarin.Forms;
 using Yakutia.Models;
+using Yakutia.Repositories;
 using Yakutia.Services;
 
 namespace Yakutia.PageModels
@@ -10,16 +12,20 @@ namespace Yakutia.PageModels
 	public class NewsPageModel : FreshBasePageModel
 	{
 		private News _selectedNews;
+		private User _user;
 
 		public override void Init(object initData)
 		{
 			base.Init(initData);
 			LoadData();
+			var rep = new UserRepository(RealmModel.GetInstance());
+			_user = rep.GetAll()
+					   .SingleOrDefault();
 		}
 
 		private async void LoadData()
 		{
-			var service = new NewsService();
+			var service = new NewsService(_user.Token);
 			try
 			{
 				News = new ObservableCollection<News>(await service.GetAll());

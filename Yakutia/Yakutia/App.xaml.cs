@@ -18,7 +18,7 @@ namespace Yakutia
             InitializeComponent();
 
 			var repository = new UserRepository(RealmModel.GetInstance());
-			var users = repository.All();
+			var users = repository.GetAll();
 
 			if (users.Any())
 			{
@@ -45,7 +45,7 @@ namespace Yakutia
 		private FreshMasterDetailNavigationContainer CreateMasterDetailNavigationContainer()
 		{
 			var masterNavigation = new FreshMasterDetailNavigationContainer();
-			masterNavigation.Init("Menu");
+			masterNavigation.Init("Меню");
 			masterNavigation.AddPage<NewsPageModel>("Новости");
 			masterNavigation.AddPage<BookletPageModel>("Правовые памятки");
 			masterNavigation.AddPage<QuestionAnswerPageModel>("Вопросы—Ответы");

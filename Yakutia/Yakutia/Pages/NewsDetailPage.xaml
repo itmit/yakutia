@@ -7,10 +7,10 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.NewsDetailPage">
     <ContentPage.Content>
-        <!--Детальнная страница новостей-->
+        <!--Детальная страница новостей-->
         <ScrollView>
             <StackLayout Margin="20">
-                <Frame Padding="0" IsClippedToBounds="True" CornerRadius="10" WidthRequest="320" HorizontalOptions="Center">
+                <Frame Padding="0" IsClippedToBounds="True" CornerRadius="10" HorizontalOptions="Center">
                     <forms:CachedImage Source="{Binding News.ImageSource}" Aspect="AspectFill"/>
                 </Frame>
                 <Label Text="{Binding News.Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>

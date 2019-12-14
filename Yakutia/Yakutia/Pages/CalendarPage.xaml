@@ -9,6 +9,7 @@
     <ContentPage.Content>
         <!--Страница календарь событий-->
         <ScrollView>
+            <StackLayout>
             <StackLayout Margin="10,20" Spacing="30">
                 <Grid HorizontalOptions="Center">
                     <Grid.Resources>
@@ -168,25 +169,53 @@
                         </Frame>
                     </StackLayout>
                 </Grid>
-                <Frame IsVisible="{Binding EventCal}" CornerRadius="20" BorderColor="Gray">
-                    <StackLayout>
-                        <Label TextColor="Black" FontSize="16" HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <FormattedString.Spans>
-                                        <Span Text="Название события "></Span>
-                                        <Span Text="{Binding Number}"></Span>
-                                        <Span Text=" числа"></Span>
-                                    </FormattedString.Spans>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Label Text="Детальный текст события"></Label>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                </Frame>
+            </StackLayout><StackLayout Margin="10,20" Spacing="30">
+                <Grid HorizontalOptions="Center" x:Name="Grid">
+                    <Grid.Resources>
+                        <ResourceDictionary>
+                            <Style x:Key="Frame" TargetType="Frame">
+                                <Setter Property="BackgroundColor" Value="White"/>
+                                <Setter Property="CornerRadius" Value="40"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Setter Property="WidthRequest" Value="40"/>
+                                <Setter Property="HeightRequest" Value="40"/>
+                                <Setter Property="BorderColor" Value="Gray"/>
+                            </Style>
+                            <Style x:Key="Label" TargetType="Label">
+                                <Setter Property="TextColor" Value="Black"/>
+                                <Setter Property="VerticalOptions" Value="Center"/>
+                                <Setter Property="HorizontalOptions" Value="Center"/>
+                            </Style>
+                        </ResourceDictionary>
+                    </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="пн" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="вт" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="ср" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="3" Text="чт" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="4" Text="пт" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="5" Text="сб" VerticalOptions="Center"/>
+                        <Label Grid.Row="0" Grid.Column="6" Text="вс" VerticalOptions="Center"/>
+
+                    </Grid>
+            </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

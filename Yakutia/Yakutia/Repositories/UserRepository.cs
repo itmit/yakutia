@@ -46,7 +46,7 @@ namespace Yakutia.Repositories
 			}
 		}
 
-		public IEnumerable<User> All()
+		public IEnumerable<User> GetAll()
 		{
 			using (_realm)
 			{

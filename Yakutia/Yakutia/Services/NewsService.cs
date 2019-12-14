@@ -13,11 +13,13 @@ namespace Yakutia.Services
 	public class NewsService
 	{
 		private Mapper _mapper;
+		private Token _token;
 
 		private const string GetAllNewsUri = "";
 
-		public NewsService()
+		public NewsService(Token token)
 		{
+			_token = token;
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
 				cfg.CreateMap<NewsDto, News>();
@@ -56,7 +58,7 @@ namespace Yakutia.Services
 
 				if (string.IsNullOrEmpty(jsonString))
 				{
-					Error = "Нет ответа от сервера";
+					Errors.Add("Нет ответа от сервера");
 					return null;
 				}
 
@@ -66,13 +68,13 @@ namespace Yakutia.Services
 					return _mapper.Map<List<News>>(jsonData.Data);
 				}
 
-				var jsonError = JsonConvert.DeserializeObject<JsonResponseDto<string>>(jsonString);
-				Error = jsonError.Data;
+				var jsonError = JsonConvert.DeserializeObject<ErrorsDto>(jsonString);
+				Errors = jsonError.Errors;
 				return null;
 			}
 		}
 
-		public string Error
+		public List<string> Errors
 		{
 			get;
 			set;
