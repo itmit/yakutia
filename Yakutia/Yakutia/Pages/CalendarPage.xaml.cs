@@ -16,14 +16,14 @@ namespace Yakutia.Pages
 
 			var now = DateTime.Now;
 			var daysInMonth = DateTime.DaysInMonth(now.Year, now.Month);
-			var week = 0;
+			var week = 1;
 			for (int i = 0; i < daysInMonth; i++)
 			{
 				var day = new DateTime(now.Year, now.Month, i + 1);
 				
 				var dayLabel = new Label
 				{
-					Text = i.ToString(),
+					Text = (i + 1).ToString(),
 					Style = (Style)Grid.Resources["Label"]
 				};
 				var dayLayout = new Frame

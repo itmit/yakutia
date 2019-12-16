@@ -10,166 +10,6 @@
         <!--Страница календарь событий-->
         <ScrollView>
             <StackLayout>
-            <StackLayout Margin="10,20" Spacing="30">
-                <Grid HorizontalOptions="Center">
-                    <Grid.Resources>
-                        <ResourceDictionary>
-                            <Style x:Key="Frame" TargetType="Frame">
-                                <Setter Property="BackgroundColor" Value="White"/>
-                                <Setter Property="CornerRadius" Value="40"/>
-                                <Setter Property="Padding" Value="0"/>
-                                <Setter Property="WidthRequest" Value="40"/>
-                                <Setter Property="HeightRequest" Value="40"/>
-                                <Setter Property="BorderColor" Value="Gray"/>
-                            </Style>
-                            <Style x:Key="Label" TargetType="Label">
-                                <Setter Property="TextColor" Value="Black"/>
-                                <Setter Property="VerticalOptions" Value="Center"/>
-                                <Setter Property="HorizontalOptions" Value="Center"/>
-                            </Style>
-                        </ResourceDictionary>
-                    </Grid.Resources>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <StackLayout Grid.Column="0">
-                        <!--Понедельник-->
-                        <Label Text="пн" HorizontalOptions="Center"></Label>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="1" Style="{StaticResource Label}"></Label>
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Press}" NumberOfTapsRequired="1"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="8" Style="{StaticResource Label}"></Label>
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Press}" NumberOfTapsRequired="1"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="15" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="22" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="29" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Column="1">
-                        <!--Вторник-->
-                        <Label Text="вт" HorizontalOptions="Center"></Label>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="2" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="9" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="16" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="23" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="30" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Column="2">
-                        <!--Среда-->
-                        <Label Text="ср" HorizontalOptions="Center"></Label>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="3" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="10" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="17" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="24" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="31" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Column="3">
-                        <!--Четверг-->
-                        <Label Text="чт" HorizontalOptions="Center"></Label>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="4" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="11" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="18" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="25" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Column="4">
-                        <!--Пятница-->
-                        <Label Text="пт" HorizontalOptions="Center"></Label>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="5" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="12" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="19" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}">
-                            <Label Text="26" Style="{StaticResource Label}"></Label>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Column="5">
-                        <!--Суббота-->
-                        <Label Text="сб" HorizontalOptions="Center" TextColor="Red"></Label>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="6" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="13" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="20" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="27" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Grid.Column="6">
-                        <!--Воскресение-->
-                        <Label Text="вс" HorizontalOptions="Center" TextColor="Red"></Label>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="7" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="14" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="21" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                        <Frame Style="{StaticResource Frame}" BorderColor="Red">
-                            <Label Text="28" Style="{StaticResource Label}" TextColor="Red"></Label>
-                        </Frame>
-                    </StackLayout>
-                </Grid>
-            </StackLayout><StackLayout Margin="10,20" Spacing="30">
                 <Grid HorizontalOptions="Center" x:Name="Grid">
                     <Grid.Resources>
                         <ResourceDictionary>
@@ -188,34 +28,33 @@
                             </Style>
                         </ResourceDictionary>
                     </Grid.Resources>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-                        <Label Text="пн" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="1" Text="вт" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="2" Text="ср" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="3" Text="чт" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="4" Text="пт" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="5" Text="сб" VerticalOptions="Center"/>
-                        <Label Grid.Row="0" Grid.Column="6" Text="вс" VerticalOptions="Center"/>
-
-                    </Grid>
-            </StackLayout>
+                    <Label Text="пн" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="вт" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="ср" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="3" Text="чт" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="4" Text="пт" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="5" Text="сб" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="0" Grid.Column="6" Text="вс" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

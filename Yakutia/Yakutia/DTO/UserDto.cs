@@ -34,7 +34,7 @@ namespace Yakutia.DTO
 		/// Возвращает или устанавливает токен для авторизации.
 		/// </summary>
 		[JsonProperty("access_token")]
-		public string Value
+		public string Token
 		{
 			get;
 			set;
@@ -44,7 +44,7 @@ namespace Yakutia.DTO
 		/// Возвращает или устанавливает строковое представление даты, до которой действует токен.
 		/// </summary>
 		[JsonProperty("expires_at")]
-		public string ExpiresAt
+		public string TokenExpiresAt
 		{
 			get;
 			set;
@@ -54,7 +54,7 @@ namespace Yakutia.DTO
 		/// Возвращает или устанавливает тип токена.
 		/// </summary>
 		[JsonProperty("token_type")]
-		public string Type
+		public string TokenType
 		{
 			get;
 			set;

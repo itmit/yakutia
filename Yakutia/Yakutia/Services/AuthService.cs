@@ -23,7 +23,10 @@ namespace Yakutia.Services
 		{
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
-				cfg.CreateMap<UserDto, User>();
+				cfg.CreateMap<UserDto, User>()
+				   .ForPath(u => u.Token.Value, d => d.MapFrom(ud => ud.Token))
+				   .ForPath(u => u.Token.Type, d => d.MapFrom(ud => ud.TokenType))
+				   .ForPath(u => u.Token.ExpiresAt, d => d.MapFrom(ud => ud.TokenExpiresAt));
 			}));
 		}
 

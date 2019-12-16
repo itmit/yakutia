@@ -17,17 +17,17 @@ namespace Yakutia.PageModels
 		public override void Init(object initData)
 		{
 			base.Init(initData);
-			LoadData();
 			var rep = new UserRepository(RealmModel.GetInstance());
 			_user = rep.GetAll()
 					   .SingleOrDefault();
+			LoadData();
 		}
 
 		private async void LoadData()
 		{
-			var service = new NewsService(_user.Token);
 			try
 			{
+				var service = new NewsService(_user.Token);
 				News = new ObservableCollection<News>(await service.GetAll());
 			}
 			catch (Exception e)

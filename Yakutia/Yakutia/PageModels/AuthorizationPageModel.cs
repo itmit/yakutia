@@ -57,20 +57,19 @@ namespace Yakutia.PageModels
 			}
 			catch (Exception e)
 			{
-				await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка сервера", "Ок");
 				Console.WriteLine(e);
 			}
 
 			if (user == null)
 			{
 				tcs.SetResult(true);
-				if (string.IsNullOrEmpty(authService.Errors.LastOrDefault()))
+				if (string.IsNullOrEmpty(authService.Errors?.LastOrDefault()))
 				{
 					await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка сервера", "Ок");
 					return;
 				}
 
-				await Application.Current.MainPage.DisplayAlert("Внимание", authService.Errors.LastOrDefault(), "Ок");
+				await Application.Current.MainPage.DisplayAlert("Внимание", authService.Errors?.LastOrDefault(), "Ок");
 				return;
 			}
 			tcs.SetResult(false);
