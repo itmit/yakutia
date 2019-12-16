@@ -31,6 +31,12 @@ namespace Yakutia.Pages
 					Content = dayLabel,
 					Style = (Style)Grid.Resources["Frame"]
 				};
+				var tapGestureRecognizer = new TapGestureRecognizer(); 
+				tapGestureRecognizer.SetBinding(TapGestureRecognizer.CommandProperty, new Binding("ShowEventsCommand"));
+				tapGestureRecognizer.CommandParameter = day;
+				dayLayout.GestureRecognizers.Add(tapGestureRecognizer);
+
+
 				if (day.DayOfWeek == DayOfWeek.Saturday || day.DayOfWeek == DayOfWeek.Sunday)
 				{
 					dayLayout.BorderColor = Color.Red;

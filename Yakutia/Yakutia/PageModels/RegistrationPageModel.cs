@@ -87,7 +87,7 @@ namespace Yakutia.PageModels
 			User user = null;
 			try
 			{
-				user = await service.SignUp(new RegisterDto
+				user = await service.Register(new RegisterDto
 				{
 					Name = $"{name} {lastName}",
 					Email = email,
@@ -98,20 +98,24 @@ namespace Yakutia.PageModels
 			}
 			catch (Exception e)
 			{
-				await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка сервера", "Ок");
 				Console.WriteLine(e);
 			}
 
 			if (user == null)
 			{
 				tcs.SetResult(true);
-				if (string.IsNullOrEmpty(service.Errors.LastOrDefault()))
+				if (service.ServerRegistrationError == null)
 				{
 					await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка сервера", "Ок");
 					return;
 				}
 
-				await Application.Current.MainPage.DisplayAlert("Внимание", service.Errors.LastOrDefault(), "Ок");
+				Errors = service.ServerRegistrationError.Errors;
+
+				if (!string.IsNullOrEmpty(service.ServerRegistrationError.Message))
+				{
+					await Application.Current.MainPage.DisplayAlert("Внимание", service.ServerRegistrationError.Message, "Ок");
+				}
 				return;
 			}
 			tcs.SetResult(false);
@@ -120,6 +124,12 @@ namespace Yakutia.PageModels
 			var app = (App)Application.Current;
 			app.OpenMainPage();
 		});
+
+		public RegisterErrorDto Errors
+		{
+			get;
+			set;
+		} = new RegisterErrorDto();
 
 		private bool IsValidEmail(string email)
 		{

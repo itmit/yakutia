@@ -63,13 +63,18 @@ namespace Yakutia.PageModels
 			if (user == null)
 			{
 				tcs.SetResult(true);
-				if (string.IsNullOrEmpty(authService.Errors?.LastOrDefault()))
+				if (authService.ServerAuthorizationError == null)
 				{
 					await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка сервера", "Ок");
 					return;
 				}
 
-				await Application.Current.MainPage.DisplayAlert("Внимание", authService.Errors?.LastOrDefault(), "Ок");
+				Errors = authService.ServerAuthorizationError.Errors;
+
+				if (!string.IsNullOrEmpty(authService.ServerAuthorizationError.Message))
+				{
+					await Application.Current.MainPage.DisplayAlert("Внимание", authService.ServerAuthorizationError.Message, "Ок");
+				}
 				return;
 			}
 			tcs.SetResult(false);
@@ -78,6 +83,12 @@ namespace Yakutia.PageModels
 			var app = (App) Application.Current;
 			app.OpenMainPage();
 		});
+
+		public AuthErrorDto Errors
+		{
+			get;
+			private set;
+		} = new AuthErrorDto();
 
 		public ICommand OpenRegistrationCommand => new FreshAwaitCommand((obj, tcs) =>
 		{

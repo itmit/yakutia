@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -10,30 +11,28 @@ using Yakutia.Models;
 
 namespace Yakutia.Services
 {
-	public class NewsService
+	public class EventsService
 	{
 		private Mapper _mapper;
 		private Token _token;
-
-		private const string GetAllNewsUri = "http://nko.itmit-studio.ru/api/news/index/";
-
-		public NewsService(Token token)
+		private const string GetEventsByDateUri = "http://nko.itmit-studio.ru/api/events/getEventsByDate/";
+		public EventsService(Token token)
 		{
 			_token = token;
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
-				cfg.CreateMap<NewsDto, News>();
+				cfg.CreateMap<EventDto, Event>();
 			}));
 		}
 
-		public async Task<List<News>> GetAll()
+		public async Task<List<Event>> GetEventsByDate(DateTime date)
 		{
 			using (var client = new HttpClient())
 			{
-				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-				var response = await client.GetAsync(GetAllNewsUri + "100/0");
+				var response = await client.GetAsync(GetEventsByDateUri + date.ToString("yyyy-MM-dd"));
 
 				var jsonString = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(jsonString);
@@ -49,8 +48,8 @@ namespace Yakutia.Services
 
 				if (response.IsSuccessStatusCode)
 				{
-					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<List<NewsDto>>>(jsonString);
-					return _mapper.Map<List<News>>(jsonData.Data);
+					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<List<EventDto>>>(jsonString);
+					return _mapper.Map<List<Event>>(jsonData.Data);
 				}
 
 				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<object>>(jsonString);

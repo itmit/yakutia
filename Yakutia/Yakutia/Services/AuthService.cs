@@ -45,7 +45,10 @@ namespace Yakutia.Services
 
 				if (string.IsNullOrEmpty(jsonString))
 				{
-					Errors.Add("Нет ответа от сервера");
+					ServerAuthorizationError = new ErrorsDto<AuthErrorDto>
+					{
+						Message = "Нет ответа от сервера"
+					};
 					return null;
 				}
 
@@ -55,12 +58,12 @@ namespace Yakutia.Services
 					return _mapper.Map<User>(jsonData.Data);
 				}
 
-				var jsonError = JsonConvert.DeserializeObject<ErrorsDto>(jsonString);
-				Errors = jsonError.Errors;
+				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<AuthErrorDto>>(jsonString);
+				ServerAuthorizationError = jsonError;
 				return null;
 			}
 		}
-		public async Task<User> SignUp(RegisterDto registrationDto)
+		public async Task<User> Register(RegisterDto registrationDto)
 		{
 			using (var client = new HttpClient())
 			{
@@ -75,7 +78,10 @@ namespace Yakutia.Services
 
 				if (string.IsNullOrEmpty(jsonString))
 				{
-					Errors.Add("Нет ответа от сервера");
+					ServerRegistrationError = new ErrorsDto<RegisterErrorDto>
+					{
+						Message = "Нет ответа от сервера"
+					};
 					return null;
 				}
 
@@ -85,13 +91,19 @@ namespace Yakutia.Services
 					return _mapper.Map<User>(jsonData.Data);
 				}
 
-				var jsonError = JsonConvert.DeserializeObject<ErrorsDto>(jsonString);
-				Errors = jsonError.Errors;
+				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<RegisterErrorDto>>(jsonString);
+				ServerRegistrationError = jsonError;
 				return null;
 			}
 		}
 
-		public List<string> Errors
+		public ErrorsDto<AuthErrorDto> ServerAuthorizationError
+		{
+			get;
+			private set;
+		}
+
+		public ErrorsDto<RegisterErrorDto> ServerRegistrationError
 		{
 			get;
 			private set;
