@@ -58,7 +58,7 @@ namespace Yakutia.PageModels
 				Event = @event;
 				HtmlSource = new HtmlWebViewSource
 				{
-					Html = @event.Body
+					Html = "<html><body>" + @event.Body + "</body></html>"
 				};
 			}
 		}

@@ -21,6 +21,13 @@ namespace Yakutia.DTO
 			set;
 		}
 
+		[JsonProperty("device_token")]
+		public string DeviceToken
+		{
+			get;
+			set;
+		}
+
 		[JsonProperty("type")]
 		public string Type
 		{

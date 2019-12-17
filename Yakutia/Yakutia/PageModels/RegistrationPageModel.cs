@@ -82,6 +82,7 @@ namespace Yakutia.PageModels
 				tcs.SetResult(true);
 				return;
 			}
+			var token = DependencyService.Get<IFireBaseService>().GetToken(email);
 
 			var service = new AuthService();
 			User user = null;
@@ -89,6 +90,7 @@ namespace Yakutia.PageModels
 			{
 				user = await service.Register(new RegisterDto
 				{
+					DeviceToken = token,
 					Name = $"{name} {lastName}",
 					Email = email,
 					Password = password,

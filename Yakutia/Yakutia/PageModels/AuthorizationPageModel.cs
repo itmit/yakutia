@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Mime;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using FreshMvvm;
 using Realms;
@@ -45,6 +46,8 @@ namespace Yakutia.PageModels
 				return;
 			}
 
+			var token = DependencyService.Get<IFireBaseService>().GetToken(email);
+
 			var authService = new AuthService();
 			User user = null;
 			try
@@ -53,6 +56,7 @@ namespace Yakutia.PageModels
 				{
 					Email = email,
 					Password = password,
+					DeviceToken = token
 				});
 			}
 			catch (Exception e)

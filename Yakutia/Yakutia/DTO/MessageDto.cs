@@ -10,5 +10,11 @@ namespace Yakutia.DTO
 			get;
 			set;
 		}
+
+		public bool Direction
+		{
+			get;
+			set;
+		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Windows.Input;
 using FreshMvvm;
 using Yakutia.Models;
@@ -27,6 +28,13 @@ namespace Yakutia.PageModels
 			var rep = new UserRepository(RealmModel.GetInstance());
 			_user = rep.GetAll()
 					   .SingleOrDefault();
+			_ = new Timer(UpdateChat, null, 0, 5000);
+
+			LoadMessages();
+		}
+
+		private void UpdateChat(object state)
+		{
 			LoadMessages();
 		}
 

@@ -10,6 +10,7 @@ using Yakutia.Page;
 using Yakutia.PageModels;
 using Yakutia.Pages;
 using Yakutia.Repositories;
+using Yakutia.Services;
 using Application = Xamarin.Forms.Application;
 
 namespace Yakutia
@@ -30,6 +31,7 @@ namespace Yakutia
 				OpenMainPage();
 				return;
 			}
+			DependencyService.Get<IFireBaseService>().DeleteInstance();
 
 			OpenAuthorizationPage();
 		}

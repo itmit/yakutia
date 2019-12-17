@@ -50,7 +50,14 @@ namespace Yakutia.Services
 				if (response.IsSuccessStatusCode)
 				{
 					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<List<NewsDto>>>(jsonString);
-					return _mapper.Map<List<News>>(jsonData.Data);
+					var news = _mapper.Map<List<News>>(jsonData.Data);
+
+					foreach (var newsItem in news)
+					{
+						newsItem.ImageSource = "http://yakutia.itmit-studio.ru/" + newsItem.ImageSource;
+					}
+
+					return news;
 				}
 
 				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<object>>(jsonString);

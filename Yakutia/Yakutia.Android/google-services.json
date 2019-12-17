@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1009929752220",
+    "firebase_url": "https://nko-yakutia.firebaseio.com",
+    "project_id": "nko-yakutia",
+    "storage_bucket": "nko-yakutia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009929752220:android:b8decbef9de0d46f57a759",
+        "android_client_info": {
+          "package_name": "com.itmit.nko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009929752220-jrnam8f9f1ijhtcvvghlu8m5kk2vd3nf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT-DV5QkjN-Kkhnn3aP4D06zA7yLMCUIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009929752220-jrnam8f9f1ijhtcvvghlu8m5kk2vd3nf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

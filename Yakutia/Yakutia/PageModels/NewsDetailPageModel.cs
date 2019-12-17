@@ -23,7 +23,7 @@ namespace Yakutia.PageModels
 				News = news;
 				HtmlSource = new HtmlWebViewSource
 				{
-					Html = "<div>" + news.Text + "</div>"
+					Html = "<html><body>" + news.Text + "</body></html>"
 				};
 			}
 		}

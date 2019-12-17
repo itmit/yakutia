@@ -29,7 +29,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <controls:ChatFrame Grid.Column="0" Padding="0" Margin="9">
                     <StackLayout BackgroundColor="#cdd0d9" Margin="3,3,3,1">

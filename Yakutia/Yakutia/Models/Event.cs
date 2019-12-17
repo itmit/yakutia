@@ -10,6 +10,18 @@ namespace Yakutia.Models
 			set;
 		}
 
+		public int Id
+		{
+			get;
+			set;
+		}
+
+		public Guid Uuid
+		{
+			get;
+			set;
+		}
+
 		public string Body
 		{
 			get; set;
