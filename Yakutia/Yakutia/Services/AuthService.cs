@@ -16,8 +16,8 @@ namespace Yakutia.Services
 	{
 		private Mapper _mapper;
 
-		private const string SignInUri = "http://nko.itmit-studio.ru/api/login";
-		private const string SignUpUri = "http://nko.itmit-studio.ru/api/register";
+		private const string SignInUri = "http://yakutia.itmit-studio.ru/api/login";
+		private const string SignUpUri = "http://yakutia.itmit-studio.ru/api/register";
 
 		public AuthService()
 		{

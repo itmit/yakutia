@@ -3,6 +3,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Yakutia.CustomControls"
+             xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.QuestionAnswerPage"
              Title="Вопросы—Ответы">
@@ -11,26 +12,7 @@
         <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="5,5" ItemsSource="{Binding Briefcase}" SeparatorVisibility="None" SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <local:Accordion TitleView="{Binding TextResponse}">
-                                    <local:Accordion.AccordionContentView>
-                                        <Label Text="{Binding TextAnswer}" TextColor="Black" Margin="5" HorizontalOptions="EndAndExpand"></Label>
-                                    </local:Accordion.AccordionContentView>
-                                    <local:Accordion.IndicatorView>
-                                        <Label Text="▼" TextColor="Blue"/>
-                                    </local:Accordion.IndicatorView>
-                                </local:Accordion>
-                            </Grid>
-                        </StackLayout>
-                    </ViewCell>
+                    <views:QuestionViewCell/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

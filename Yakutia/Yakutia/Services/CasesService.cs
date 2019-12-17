@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -11,28 +10,31 @@ using Yakutia.Models;
 
 namespace Yakutia.Services
 {
-	public class EventsService
+	public class CasesService
 	{
+
 		private Mapper _mapper;
 		private Token _token;
-		private const string GetEventsByDateUri = "http://yakutia.itmit-studio.ru/api/events/getEventsByDate/";
-		public EventsService(Token token)
+
+		private const string GetAllNewsUri = "http://yakutia.itmit-studio.ru/api/cases/index/";
+
+		public CasesService(Token token)
 		{
 			_token = token;
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
-				cfg.CreateMap<EventDto, Event>();
+				cfg.CreateMap<NewsDto, News>();
 			}));
 		}
 
-		public async Task<List<Event>> GetEventsByDate(DateTime date)
+		public async Task<List<News>> GetAll()
 		{
 			using (var client = new HttpClient())
 			{
-				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
 
-				var response = await client.GetAsync(GetEventsByDateUri + date.ToString("yyyy-MM-dd"));
+				var response = await client.GetAsync(GetAllNewsUri + "100/0");
 
 				var jsonString = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(jsonString);
@@ -48,19 +50,14 @@ namespace Yakutia.Services
 
 				if (response.IsSuccessStatusCode)
 				{
-					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<List<EventDto>>>(jsonString);
-					return _mapper.Map<List<Event>>(jsonData.Data);
+					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<List<NewsDto>>>(jsonString);
+					return _mapper.Map<List<News>>(jsonData.Data);
 				}
 
 				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<object>>(jsonString);
 				ServerError = jsonError;
 				return null;
 			}
-		}
-
-		public async Task<bool> Register(Event @event)
-		{
-			return await Task.FromResult(true);
 		}
 
 		public ErrorsDto<object> ServerError

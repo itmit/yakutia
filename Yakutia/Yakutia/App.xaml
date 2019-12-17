@@ -10,5 +10,13 @@
 
         <converters:ListToStringConverter x:Key="ListToStringConverter" />
         <converters:NullToBoolConverter x:Key="NullToBoolConverter" />
+        <Style x:Key="BackButton" TargetType="Button">
+            <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,.1,80,80"/>
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="Image" Value="arrow.png" />
+        </Style>
     </Application.Resources>
 </Application>

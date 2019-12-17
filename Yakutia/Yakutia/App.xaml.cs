@@ -3,11 +3,14 @@ using System.Linq;
 using FreshMvvm;
 using Realms;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 using Xamarin.Forms.Xaml;
 using Yakutia.Page;
 using Yakutia.PageModels;
 using Yakutia.Pages;
 using Yakutia.Repositories;
+using Application = Xamarin.Forms.Application;
 
 namespace Yakutia
 {
@@ -16,6 +19,8 @@ namespace Yakutia
         public App()
         {
             InitializeComponent();
+			
+			On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 
 			var repository = new UserRepository(RealmModel.GetInstance());
 			var users = repository.GetAll();

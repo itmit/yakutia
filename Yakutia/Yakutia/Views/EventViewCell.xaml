@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Views.EventViewCell">
   <ViewCell.View>
-      <Frame CornerRadius="20" BorderColor="Gray">
+      <Frame CornerRadius="20" BorderColor="Gray" Margin="20">
           <StackLayout>
               <Label TextColor="Black" FontSize="16" HorizontalOptions="Center" Text="{Binding Head}"/>
-              <Label Text="Детальный текст события"></Label>
+              <Label Text="{Binding Body}"></Label>
           </StackLayout>
       </Frame>
     </ViewCell.View>

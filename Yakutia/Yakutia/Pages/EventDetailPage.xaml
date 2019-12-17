@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Pages.EventDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="{Binding Event.Head}" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+                <Button Text="Зарегистрироваться на мероприятие" Command="{Binding RegisterForEventCommand}"/>
+                <StackLayout>
+                    <WebView VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                             Navigating="WebView_OnNavigating"
+                             Source="{Binding HtmlSource}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

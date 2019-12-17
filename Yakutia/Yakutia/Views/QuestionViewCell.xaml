@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:customControls="clr-namespace:Yakutia.CustomControls;assembly=Yakutia"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Views.QuestionViewCell">
+    <ViewCell.View>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <customControls:Accordion TitleView="{Binding TextResponse}">
+                    <customControls:Accordion.AccordionContentView>
+                        <Label Text="{Binding TextAnswer}" TextColor="Black" Margin="5" HorizontalOptions="EndAndExpand"/>
+                    </customControls:Accordion.AccordionContentView>
+                    <customControls:Accordion.IndicatorView>
+                        <Label Text="▼" TextColor="Blue"/>
+                    </customControls:Accordion.IndicatorView>
+                </customControls:Accordion>
+            </Grid>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

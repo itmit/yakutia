@@ -1,50 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
+             xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.ChatPage"
              Title="Чат">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <views:SelectorDataTemplate x:Key="MessageTemplateSelector"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <!--Страница чат-->
-            <StackLayout Spacing="0">
-                <ListView VerticalOptions="Start" VerticalScrollBarVisibility="Never" SelectionMode="None" HasUnevenRows="True" SeparatorVisibility="None" Margin="20,5,20,0">
-                    <ListView.ItemsSource>
-                        <x:String>0</x:String>
-                    </ListView.ItemsSource>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Padding="5">
-                                <StackLayout HorizontalOptions="Start">
-                                    <Label Text="Администратор" TextColor="Black" FontSize="12"></Label>
-                                    <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True">
-                                        <Label Text="Hello" TextColor="Black"></Label>
-                                    </Frame>
-                                </StackLayout>
-                                <StackLayout HorizontalOptions="End">
-                                    <Label Text="Пользователь" TextColor="Black" FontSize="12"></Label>
-                                    <Frame BackgroundColor="White" CornerRadius="20" HasShadow="True">
-                                        <Label Text="Hi!" TextColor="Black"></Label>
-                                    </Frame>
-                                </StackLayout>
-                            </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <Grid VerticalOptions="End">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Editor Grid.Column="0" Grid.Row="0" Placeholder="Напишите сообщение" HorizontalOptions="Start" AutoSize="TextChanges"></Editor>
-                    <Button Grid.Column="1" Grid.Row="0" Text="Оправить" Clicked="Button_Clicked"></Button>
-                </Grid>
-            </StackLayout>
+        <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
+            <Label
+                    Text="{Binding DialogLastUpdated}"
+                    HorizontalOptions="Center"
+                    TextColor="#242329" />
+            <ListView
+                    x:Name="MessagesListView"
+                    ItemTemplate="{StaticResource MessageTemplateSelector}"
+                    ItemsSource="{Binding Messages}"
+                    HasUnevenRows="True" SeparatorVisibility="None" IsEnabled="True" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <controls:ChatFrame Grid.Column="0" Padding="0" Margin="9">
+                    <StackLayout BackgroundColor="#cdd0d9" Margin="3,3,3,1">
+                        <Editor
+                                Text="{Binding OutText}"
+                                TextColor="Black"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="Transparent"
+                                Keyboard="Chat" />
+                    </StackLayout>
+                </controls:ChatFrame>
+                <Image
+                        x:Name="SendButton"
+                        Grid.Column="1"
+                        Source="sendButton.png"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        Margin="4">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Command="{Binding SendCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

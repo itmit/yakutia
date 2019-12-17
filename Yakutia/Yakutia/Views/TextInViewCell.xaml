@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Yakutia.Converters;assembly=Yakutia"
+             xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Views.TextInViewCell">
+  <ViewCell.View>
+      <Grid ColumnSpacing="0" Padding="5">
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="15"></ColumnDefinition>
+              <ColumnDefinition Width="Auto"></ColumnDefinition>
+              <ColumnDefinition Width="*"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+              <RowDefinition Height="*"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+          </Grid.RowDefinitions>
+          <AbsoluteLayout Grid.Column="0" Padding="8,0,0,0">
+              <Image  Source="sery.png" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"/>
+          </AbsoluteLayout>
+          <controls:Inframe Grid.Row="0" Grid.Column="1"  CornerRadius="5" Padding="0" Margin="0,0,30,0">
+              <StackLayout BackgroundColor="#cdd0d9" Margin="3" Padding="8,0,0,0">
+                  <Grid>
+                      <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="Auto" />
+                          <ColumnDefinition Width="30" />
+                      </Grid.ColumnDefinitions>
+                      <Label Grid.Column="0" TextColor="Black" FontSize="Medium" Text="{Binding Text}" />
+                      <Label Grid.Column="1" VerticalOptions="End" FontSize="Micro" HorizontalTextAlignment="End" Text="{Binding MessageDateTime, StringFormat='{0:HH:mm}'}" TextColor="Gray"/>
+                  </Grid>
+              </StackLayout>
+          </controls:Inframe>
+      </Grid>
+    </ViewCell.View>
+</ViewCell>

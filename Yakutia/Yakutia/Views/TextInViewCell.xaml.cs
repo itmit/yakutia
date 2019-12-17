@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Yakutia.Models;
 
-namespace Yakutia.Pages
+namespace Yakutia.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class QuestionAnswerPage : ContentPage
+	public partial class TextInViewCell : ViewCell
 	{
-		public QuestionAnswerPage()
+		public TextInViewCell()
 		{
 			InitializeComponent();
 		}

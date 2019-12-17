@@ -15,7 +15,7 @@ namespace Yakutia.Services
 		private Mapper _mapper;
 		private Token _token;
 
-		private const string GetAllNewsUri = "http://nko.itmit-studio.ru/api/news/index/";
+		private const string GetAllNewsUri = "http://yakutia.itmit-studio.ru/api/news/index/";
 
 		public NewsService(Token token)
 		{

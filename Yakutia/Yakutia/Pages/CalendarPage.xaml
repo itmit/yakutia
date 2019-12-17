@@ -57,7 +57,10 @@
                     <Label Grid.Row="0" Grid.Column="6" Text="вс" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
                 </Grid>
 
-                <ListView ItemsSource="{Binding Events}">
+                <ListView ItemsSource="{Binding Events}" 
+                          SelectedItem="{Binding SelectedEvent}"
+                          ItemSelected="ListView_OnItemSelected"
+                          HasUnevenRows="True" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <views:EventViewCell/>
