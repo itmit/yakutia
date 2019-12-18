@@ -21,76 +21,76 @@
             <StackLayout Margin="10,0" Spacing="10">
                 <Label Text="1.1 Создание и регистрация НКО">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="1.1 Создание и регистрация НКО" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="1.2 Реорганизация НКО">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="1.2 Реорганизация НКО" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="1.3 Ликвидация НКО">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="1.3 Ликвидация НКО" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="1.4 Внесение изменений в сведения ЕГРЮЛ">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="1.4 Внесение изменений в сведения ЕГРЮЛ" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="1.5 Внесение изменений в Устав НКО">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_4" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="1.5 Внесение изменений в Устав НКО" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="1.6 Основания для отказа в государственной регистрации">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_5" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="1.6 Основания для отказа в государственной регистрации" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
             <Label Text="2. Включение в реестр ИОПУ" Style="{StaticResource Label}">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_6" NumberOfTapsRequired="1"/>
+                    <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="2. Включение в реестр ИОПУ" NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
             <Label Text="3. Отчетность НКО" Style="{StaticResource Label}"></Label>
             <StackLayout Margin="10,0" Spacing="10">
                 <Label Text="3.1 Казачьи общества">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_7" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="3.1 Казачьи общества" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="3.2 НКО (АНО, Ассоциации, Союзы, Фонды и другие)">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_8" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="3.2 НКО (АНО, Ассоциации, Союзы, Фонды и другие)" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="3.3 Общественные объединения">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_9" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="3.3 Общественные объединения" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="3.4 Профсоюзы">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_10" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="3.4 Профсоюзы" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="3.5 Религиозные организации">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_11" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="3.5 Религиозные организации" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Label Text="3.6 Способы предоставления отчетности">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_12" NumberOfTapsRequired="1"/>
+                        <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="3.6 Способы предоставления отчетности" NumberOfTapsRequired="1"/>
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>
             <Label Text="4. Обязанности и ответственность НКО" Style="{StaticResource Label}">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_13" NumberOfTapsRequired="1"/>
+                    <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="4. Обязанности и ответственность НКО"  NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>

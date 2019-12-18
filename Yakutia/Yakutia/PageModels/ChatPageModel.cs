@@ -12,8 +12,13 @@ namespace Yakutia.PageModels
 {
 	public class ChatPageModel : FreshBasePageModel
 	{
-		public Action RefreshScrollDown;
+		public Action RefreshScrollDown
+		{
+			get;
+			set;
+		}
 		private User _user;
+		private Timer _timer;
 
 		public ObservableCollection<Message> Messages
 		{
@@ -25,16 +30,20 @@ namespace Yakutia.PageModels
 		{
 			base.Init(initData);
 
-			var rep = new UserRepository(RealmModel.GetInstance());
+			var rep = new UserRepository();
 			_user = rep.GetAll()
 					   .SingleOrDefault();
-			_ = new Timer(UpdateChat, null, 0, 5000);
+			_timer = new Timer(UpdateChat, null, 0, 5000);
 
 			LoadMessages();
 		}
 
 		private void UpdateChat(object state)
 		{
+			if (_timer == null)
+			{
+				return;
+			}
 			LoadMessages();
 		}
 

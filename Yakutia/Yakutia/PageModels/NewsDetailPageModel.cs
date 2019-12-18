@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using FreshMvvm;
+﻿using FreshMvvm;
 using Xamarin.Forms;
 using Yakutia.Models;
 

@@ -49,7 +49,7 @@ namespace Yakutia.PageModels
 		{
 			base.Init(initData);
 
-			var rep = new UserRepository(RealmModel.GetInstance());
+			var rep = new UserRepository();
 			_user = rep.GetAll()
 					   .SingleOrDefault();
 

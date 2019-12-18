@@ -121,7 +121,7 @@ namespace Yakutia.PageModels
 				return;
 			}
 			tcs.SetResult(false);
-			var repository = new UserRepository(RealmModel.GetInstance());
+			var repository = new UserRepository();
 			repository.Add(user);
 			var app = (App)Application.Current;
 			app.OpenMainPage();

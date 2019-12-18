@@ -19,8 +19,7 @@ namespace Yakutia.PageModels
 
 		public CalendarPageModel()
 		{
-			_user = new UserRepository(RealmModel.GetInstance()).GetAll()
-															  .SingleOrDefault();
+			_user = new UserRepository().GetAll().SingleOrDefault();
 			
 		}
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using FreshMvvm;
 using Xamarin.Forms;
 using Yakutia.Models;
@@ -17,10 +18,23 @@ namespace Yakutia.PageModels
 		public override void Init(object initData)
 		{
 			base.Init(initData);
-			var rep = new UserRepository(RealmModel.GetInstance());
+			var rep = new UserRepository();
 			_user = rep.GetAll()
 					   .SingleOrDefault();
 			LoadData();
+		}
+		public ICommand RefreshCommand =>
+			new FreshAwaitCommand((obj, tcs) =>
+			{
+				IsRefreshing = true;
+				LoadData();
+				IsRefreshing = false;
+				tcs.SetResult(true);
+			});
+		public bool IsRefreshing
+		{
+			get;
+			set;
 		}
 
 		private async void LoadData()

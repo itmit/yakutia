@@ -32,12 +32,12 @@ namespace Yakutia.Droid
 			var resultCode = GoogleApiAvailability.Instance.IsGooglePlayServicesAvailable(this);
 
 			Log.Info("NKOFireBaseService", $"IsGooglePlayServicesAvailable code is {resultCode}");
-			
+			Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
 			CachedImageRenderer.Init(true);
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App()); 
-			Instance = this;
+			global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
+			LoadApplication(new App()); 
 		}
 		
 		public static Context Instance

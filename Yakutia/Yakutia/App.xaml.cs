@@ -23,7 +23,7 @@ namespace Yakutia
 			
 			On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 
-			var repository = new UserRepository(RealmModel.GetInstance());
+			var repository = new UserRepository();
 			var users = repository.GetAll();
 
 			if (users.Any())
@@ -31,7 +31,6 @@ namespace Yakutia
 				OpenMainPage();
 				return;
 			}
-			DependencyService.Get<IFireBaseService>().DeleteInstance();
 
 			OpenAuthorizationPage();
 		}
@@ -43,6 +42,7 @@ namespace Yakutia
 		
 		public void OpenAuthorizationPage()
 		{
+			DependencyService.Get<IFireBaseService>().DeleteInstance();
 			var loginPage = FreshPageModelResolver.ResolvePageModel<AuthorizationPageModel>();
 			var loginContainer = new FreshNavigationContainer(loginPage, NavigationContainerNames.AuthenticationContainer);
 
@@ -51,7 +51,7 @@ namespace Yakutia
 
 		private FreshMasterDetailNavigationContainer CreateMasterDetailNavigationContainer()
 		{
-			var masterNavigation = new FreshMasterDetailNavigationContainer();
+			var masterNavigation = new CustomMasterDetailNavigationContainer();
 			masterNavigation.Init("Меню");
 			masterNavigation.AddPage<NewsPageModel>("Новости");
 			masterNavigation.AddPage<BookletPageModel>("Правовые памятки");
@@ -62,6 +62,7 @@ namespace Yakutia
 			masterNavigation.AddPage<ChatPageModel>("Чат");
 			masterNavigation.AddPage<ContactsPageModel>("Контакты");
 			masterNavigation.AddPage<GrantsPageModel>("Президентские гранты");
+			
 			NavigationPage.SetHasNavigationBar(masterNavigation.Master, false);
 			return masterNavigation;
 		}

@@ -10,7 +10,7 @@ using Yakutia.Models;
 
 namespace Yakutia.Services
 {
-	public class NewsService
+	public class NewsService : BaseService
 	{
 		private Mapper _mapper;
 		private Token _token;
@@ -22,7 +22,8 @@ namespace Yakutia.Services
 			_token = token;
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
-				cfg.CreateMap<NewsDto, News>();
+				cfg.CreateMap<NewsDto, News>()
+				   .ForMember(news => news.ImageSource, o => o.MapFrom(dto => Domain + dto.ImageSource));
 			}));
 		}
 
@@ -38,38 +39,14 @@ namespace Yakutia.Services
 				var jsonString = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(jsonString);
 
-				if (string.IsNullOrEmpty(jsonString))
-				{
-					ServerError = new ErrorsDto<object>
-					{
-						Message = "Нет ответа от сервера"
-					};
-					return null;
-				}
-
 				if (response.IsSuccessStatusCode)
 				{
 					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<List<NewsDto>>>(jsonString);
-					var news = _mapper.Map<List<News>>(jsonData.Data);
-
-					foreach (var newsItem in news)
-					{
-						newsItem.ImageSource = "http://yakutia.itmit-studio.ru/" + newsItem.ImageSource;
-					}
-
-					return news;
+					return _mapper.Map<List<News>>(jsonData.Data);
 				}
 
-				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<object>>(jsonString);
-				ServerError = jsonError;
 				return null;
 			}
-		}
-
-		public ErrorsDto<object> ServerError
-		{
-			get;
-			set;
 		}
 	}
 }

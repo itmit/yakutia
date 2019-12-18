@@ -5,21 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.AuthorizationPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material">
     <ContentPage.Content>
         <!--Страница авторизации-->
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
-            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail"/>
+            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail" Visual="Material"/>
             <Label Text="{Binding Errors.Email, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True"/>
+            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True" Visual="Material"/>
             <Label Text="{Binding Errors.Password, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"/>
             <StackLayout>
-                <Button Text="Войти" Command="{Binding SignInCommand}"></Button>
-                <Button Text="Регистрация" Command="{Binding OpenRegistrationCommand}"></Button>
+                <Button Text="Войти" Command="{Binding SignInCommand}" Visual="Material"/>
+                <Button Text="Регистрация" Command="{Binding OpenRegistrationCommand}" Visual="Material"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

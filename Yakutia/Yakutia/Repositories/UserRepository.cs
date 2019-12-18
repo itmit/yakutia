@@ -10,15 +10,13 @@ namespace Yakutia.Repositories
 	{
 		#region Data
 		#region Fields
-		private readonly Realm _realm;
 		private readonly IMapper _mapper;
 		#endregion
 		#endregion
 
 		#region .ctor
-		public UserRepository(Realm realm)
+		public UserRepository()
 		{
-			_realm = realm;
 			var mapperConfiguration = new MapperConfiguration(cfg =>
 			{
 				cfg.CreateMap<User, UserRealmObject>();
@@ -36,11 +34,11 @@ namespace Yakutia.Repositories
 		{
 			var userRealm = _mapper.Map<UserRealmObject>(user);
 
-			using (_realm)
+			using (var realm = RealmModel.GetInstance())
 			{
-				using (var transaction = _realm.BeginWrite())
+				using (var transaction = realm.BeginWrite())
 				{
-					_realm.Add((RealmObject) userRealm, true);
+					realm.Add((RealmObject) userRealm, true);
 					transaction.Commit();
 				}
 			}
@@ -48,9 +46,9 @@ namespace Yakutia.Repositories
 
 		public IEnumerable<User> GetAll()
 		{
-			using (_realm)
+			using (var realm = RealmModel.GetInstance())
 			{
-				var users = _realm.All<UserRealmObject>();
+				var users = realm.All<UserRealmObject>();
 				var userList = new List<User>();
 				foreach (var user in users)
 				{
@@ -63,12 +61,12 @@ namespace Yakutia.Repositories
 
 		public void Remove(User user)
 		{
-			using (_realm)
+			using (var realm = RealmModel.GetInstance())
 			{
-				using (var transaction = _realm.BeginWrite())
+				using (var transaction = realm.BeginWrite())
 				{
-					var userRealm = _realm.Find<UserRealmObject>(user.Guid.ToString());
-					_realm.Remove(userRealm);
+					var userRealm = realm.Find<UserRealmObject>(user.Guid.ToString());
+					realm.Remove(userRealm);
 					transaction.Commit();
 				}
 			}
