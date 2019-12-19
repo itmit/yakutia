@@ -21,10 +21,10 @@ namespace Yakutia.PageModels
 
 		public ICommand RegisterForEventCommand => new FreshAwaitCommand(async (obj, tcs) =>
 		{
-			bool result = false;
+			bool result = false; 
+			var service = new EventsService(_user.Token);
 			try
 			{
-				var service = new EventsService(_user.Token);
 				result = await service.Register(Event);
 			}
 			catch (Exception e)
@@ -38,7 +38,16 @@ namespace Yakutia.PageModels
 			}
 			else
 			{
-				await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка", "Ок");
+				if (service.ServerError == null || string.IsNullOrEmpty(service.ServerError.Message))
+				{
+					await Application.Current.MainPage.DisplayAlert("Внимание", "Ошибка", "Ок");
+				}
+				else
+				{
+					await Application.Current.MainPage.DisplayAlert("Внимание", service.ServerError.Message, "Ок");
+				}
+
+
 				tcs.SetResult(true);
 				return;
 			}

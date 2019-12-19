@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Views.Partials.ChatInputBarView">
+  <ContentView.Content>
+      <Grid RowSpacing="0" 
+            ColumnSpacing="0">
+          <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="Auto" />
+          </Grid.ColumnDefinitions>
+          <controls:ExtendedEditorControl x:Name="ChatTextInput" 
+                                          Text="{Binding TextToSend}" 
+                                          Margin="1"  
+                                          TextColor="Black" 
+                                          Keyboard="Chat"  
+                                          IsExpandable="true"
+                                          HorizontalOptions="FillAndExpand" 
+                                          PlaceholderColor="LightGray"
+                                          Placeholder="Сообщение"
+                                          Grid.Row="0" 
+                                          Grid.Column="0" />
+            <Image Grid.Row="0"
+                   Grid.Column="1"
+                   Source="sendButton">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding SendCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+      </Grid>
+    </ContentView.Content>
+</ContentView>

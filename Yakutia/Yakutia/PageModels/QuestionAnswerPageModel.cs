@@ -27,78 +27,73 @@ namespace Yakutia.PageModels
 			{
 				new DataForListModel
 				{
-					TextResponse = "Что такое ТОС (территориальное общественное самоуправление)?",
-					TextAnswer = "Ответ 1"
+					TextResponse = "Кто может принять участие в конкурсе Фонда Президентских грантов?",
+					TextAnswer = Properties.QA.WhoCanTakePartInTheContestOfThePresidentialGrantsFund
 				},
 				new DataForListModel
 				{
-					TextResponse = "Как получить консультацию по вопросам государственной регистрации некоммерческих организаций?",
-					TextAnswer = "Ответ 2"
+					TextResponse = "Какие организации не могут принимать участие в конкурсе Фонда\r\nПрезидентских грантов?",
+					TextAnswer = Properties.QA.WhichOrganizationsCannot_participateInTheFundsCompetitionPresidentialGrants
 				},
 				new DataForListModel
 				{
-					TextResponse = "Как сообщить сведения о создании филиала или представительства некоммерческой организации?",
-					TextAnswer = "Ответ 3"
+					TextResponse = "Как получить консультацию по вопросам государственной регистрации\r\nнекоммерческих организаций?",
+					TextAnswer = Properties.QA.HowToGetAdviceOnStateRegistrationOfNonProfitOrganizations
 				},
 				new DataForListModel
 				{
-					TextResponse = "Как изменить состав учредителей общественной организации или иной корпоративной некоммерческой организации?",
-					TextAnswer = "Ответ 4"
+					TextResponse = "Как сообщить сведения о создании филиала или представительства\r\nнекоммерческой организации?",
+					TextAnswer = Properties.QA.HowReportEstablishmentBranchOrRepresentativeOfficeNonProfitOrganization
 				},
 				new DataForListModel
 				{
-					TextResponse = "Есть ли особенности изменения адреса некоммерческой организации на другой субъект Российской Федерации?",
-					TextAnswer = "Ответ 5"
+					TextResponse = "Как изменить состав учредителей общественной организации или иной\r\nкорпоративной некоммерческой организации?",
+					TextAnswer = Properties.QA.HowChangeCompositionFoundersPPublicOrganizationOrOtherCorporateNonProfitOrganization
+				},
+				new DataForListModel
+				{
+					TextResponse = "Есть ли особенности изменения адреса некоммерческой организации на\r\nдругой субъект Российской Федерации?",
+					TextAnswer = Properties.QA.String1
 				},
 				new DataForListModel
 				{
 					TextResponse = "Где можно ознакомиться с планом проверок некоммерческих организаций?",
-					TextAnswer = "Ответ 6"
+					TextAnswer = Properties.QA.String2
 				},
 				new DataForListModel
 				{
-					TextResponse = "Как обжаловать решение территориального органа Минюста России об отказе в государственной регистрации?",
-					TextAnswer = "Ответ 7"
+					TextResponse = "Как обжаловать решение территориального органа Минюста России об\r\nотказе в государственной регистрации?",
+					TextAnswer = Properties.QA.String3
 				},
 				new DataForListModel
 				{
 					TextResponse = "Как зарегистрировать символику некоммерческой организации?",
-					TextAnswer = "Ответ 8"
+					TextAnswer = Properties.QA.String4
 				},
 				new DataForListModel
 				{
 					TextResponse = "Какой порядок создания общероссийского общественного объединения?",
-					TextAnswer = "Ответ 9"
+					TextAnswer = Properties.QA.String5
 				},
 				new DataForListModel
 				{
-					TextResponse = "Какие документы должны быть представлены в Минюст России для его регистрации?",
-					TextAnswer = "Ответ 10"
+					TextResponse = "Какой орган осуществляет оценку качества оказания общественно полезных\r\nуслуг социально ориентированными некоммерческими организациями?",
+					TextAnswer = Properties.QA.String6
 				},
 				new DataForListModel
 				{
-					TextResponse = "Какую отчетность общественная организация или общественное движение обязаны представлять в Минюст России (его территориальный орган)?",
-					TextAnswer = "Ответ 11"
+					TextResponse = "Какую отчетность общественная организация или общественное движение\r\nобязаны представлять в Минюст России (его территориальный орган)?",
+					TextAnswer = Properties.QA.String7
 				},
 				new DataForListModel
 				{
-					TextResponse = "Как создается и регистрируется политическая партия?",
-					TextAnswer = "Ответ 12"
+					TextResponse = "В банке требуют выписку из реестра филиалов и представительств\r\nмеждународных организаций и иностранных некоммерческих неправительственных\r\nорганизаций по состоянию на сегодняшний день. Как можно ее получить?",
+					TextAnswer = Properties.QA.String8
 				},
 				new DataForListModel
 				{
-					TextResponse = "Куда представлять документы для государственной регистрации религиозной организации?",
-					TextAnswer = "Ответ 13"
-				},
-				new DataForListModel
-				{
-					TextResponse = "Куда оплачивать государственную пошлину за государственную регистрацию религиозной организации?",
-					TextAnswer = "Ответ 14"
-				},
-				new DataForListModel
-				{
-					TextResponse = "Какие обязанности по предоставлению отчетности установлены для казачьих обществ?",
-					TextAnswer = "Ответ 15"
+					TextResponse = "Как и где получить информацию о некоммерческой организации?",
+					TextAnswer = Properties.QA.String9
 				}
 			};
 		}

@@ -15,7 +15,17 @@ namespace Yakutia.Models
 			get;
 			set;
 		}
+		public string ImageSource
+		{
+			get;
+			set;
+		}
 
+		public string Place
+		{
+			get;
+			set;
+		}
 		public Guid Uuid
 		{
 			get;

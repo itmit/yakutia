@@ -24,11 +24,11 @@ namespace Yakutia.Services
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
 				cfg.CreateMap<Message, MessageDto>()
-				   .ForMember(mDto => mDto.Direction, o => o.MapFrom(m => m.IsTextIn))
+				   .ForMember(mDto => mDto.Direction, o => o.MapFrom(m => m.IsTextOut))
 				   .ForMember(mDto => mDto.Message, o => o.MapFrom(m => m.Text));
 
 				cfg.CreateMap<MessageDto, Message>()
-				   .ForMember(m => m.IsTextIn, o => o.MapFrom(mDto => mDto.Direction))
+				   .ForMember(m => m.IsTextOut, o => o.MapFrom(mDto => mDto.Direction))
 				   .ForMember(m => m.Text, o => o.MapFrom(mDto => mDto.Message));
 			}));
 		}

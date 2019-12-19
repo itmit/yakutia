@@ -13,29 +13,9 @@ namespace Yakutia.Pages
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await Application.Current.MainPage.DisplayAlert("Внимание!","Перед отправкой сообщения введите свое имя и номер телефона","ОК");
-        }
-
-		private ChatPageModel ViewModel
+		public void OnListTapped(object sender, ItemTappedEventArgs e)
 		{
-			get { return BindingContext as ChatPageModel; }
-		}
-
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
-
-			ViewModel.RefreshScrollDown = () => {
-				if (ViewModel.Messages.Count > 0)
-				{
-					Device.BeginInvokeOnMainThread(() => {
-
-						MessagesListView.ScrollTo(ViewModel.Messages[ViewModel.Messages.Count - 1], ScrollToPosition.End, false);
-					});
-				}
-			};
+			ChatInput.UnFocusEntry();
 		}
 	}
 }

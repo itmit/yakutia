@@ -5,11 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.EventDetailPage">
+             x:Class="Yakutia.Pages.EventDetailPage"
+             Visual="Material">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20">
-                <Label Text="{Binding Event.Head}" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+                <Label Text="{Binding Event.Head}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="{Binding Event.Place}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="{Binding Event.DateStart, StringFormat='{0:dd.MM.yyyy hh:mm:ss}'}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
                 <Button Text="Зарегистрироваться на мероприятие" Command="{Binding RegisterForEventCommand}"/>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <WebView VerticalOptions="FillAndExpand"

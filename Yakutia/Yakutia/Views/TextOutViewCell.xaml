@@ -8,31 +8,14 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Views.TextOutViewCell">
   <ViewCell.View>
-      <Grid ColumnSpacing="0" Padding="5">
-          <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*"></ColumnDefinition>
-              <ColumnDefinition Width="Auto"></ColumnDefinition>
-              <ColumnDefinition Width="15"></ColumnDefinition>
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-              <RowDefinition Height="*"></RowDefinition>
-              <RowDefinition Height="Auto"></RowDefinition>
-          </Grid.RowDefinitions>
-          <controls:AdvancedFrame Grid.Row="0" CornerRadius="5" Grid.Column="1" Padding="0" Margin="30,0,0,0">
-              <StackLayout Margin="3" Padding="8,0,0,0" BackgroundColor="#8ba8e0">
-                  <Grid>
-                      <Grid.ColumnDefinitions>
-                          <ColumnDefinition Width="Auto" />
-                          <ColumnDefinition Width="30" />
-                      </Grid.ColumnDefinitions>
-                      <Label Grid.Column="0" TextColor="Black" FontSize="Medium" Text="{Binding Text}" />
-                      <Label Grid.Column="1" VerticalOptions="End" FontSize="Micro" HorizontalTextAlignment="End"  Text="{Binding MessageDateTime, StringFormat='{0:HH:mm}'}" TextColor="Gray" />
-                  </Grid>
-              </StackLayout>
-          </controls:AdvancedFrame>
-          <AbsoluteLayout Grid.Row="0" Grid.Column="2" Padding="0,0,8,0">
-              <Image  Source="goluboy.png" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0, 0, AutoSize, AutoSize"/>
-          </AbsoluteLayout>
-      </Grid>
+        <Frame BackgroundColor="Gray"
+               Padding="10"
+               Rotation="180"
+               FlowDirection="LeftToRight"
+               HasShadow="false"
+               Margin="80,10,10,10">
+          <Label Text="{Binding Text}"
+                 TextColor="White"/>
+      </Frame>
     </ViewCell.View>
 </ViewCell>

@@ -42,7 +42,7 @@ namespace Yakutia.Services
 
 				if (string.IsNullOrEmpty(jsonString))
 				{
-					ServerError = new ErrorsDto<object>
+					ServerError = new ErrorsDto<string>
 					{
 						Message = "Нет ответа от сервера"
 					};
@@ -55,7 +55,7 @@ namespace Yakutia.Services
 					return _mapper.Map<List<Event>>(jsonData.Data);
 				}
 
-				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<object>>(jsonString);
+				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<string>>(jsonString);
 				ServerError = jsonError;
 				return null;
 			}
@@ -67,20 +67,24 @@ namespace Yakutia.Services
 			{
 				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
 				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-				/*
-				var json = JsonConvert.SerializeObject(_mapper.Map<EventDto>(@event));
-				Debug.WriteLine(json);*/
+
 				var response = await client.PostAsync(RegisterByDateUri, new FormUrlEncodedContent(new Dictionary<string, string>
 				{
-					{"event", @event.Uuid.ToString() }
+					{ "event", @event.Uuid.ToString() }
 				}));
 				var resp = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(resp);
-				return response.IsSuccessStatusCode;
+				if (response.IsSuccessStatusCode)
+				{
+					return true;
+				}
+
+				ServerError = JsonConvert.DeserializeObject<ErrorsDto<string>>(resp);
+				return false;
 			}
 		}
 
-		public ErrorsDto<object> ServerError
+		public ErrorsDto<string> ServerError
 		{
 			get;
 			set;

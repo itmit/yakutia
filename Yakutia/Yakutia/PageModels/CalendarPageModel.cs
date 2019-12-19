@@ -16,6 +16,7 @@ namespace Yakutia.PageModels
 	{
 		private User _user;
 		private Event _selectedEvent;
+		private DateTime _selectedDate;
 
 		public CalendarPageModel()
 		{
@@ -36,6 +37,11 @@ namespace Yakutia.PageModels
 
 				if (obj is DateTime date)
 				{
+					if (_selectedDate == date)
+					{
+						return;
+					}
+					_selectedDate = date;
 					Events.Clear();
 					var service = new EventsService(_user.Token);
 					Events = new ObservableCollection<Event>(await service.GetEventsByDate(date));
@@ -54,6 +60,7 @@ namespace Yakutia.PageModels
 				}
 			}
 		}
+
 
 		public Command<Event> EventSelected =>
 			new Command<Event>(obj =>

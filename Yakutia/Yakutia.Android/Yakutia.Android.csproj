@@ -87,9 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Renderers\AdvancedFrameRendererDroid.cs" />
-    <Compile Include="Renderers\AndroidChatFrameRenderer.cs" />
-    <Compile Include="Renderers\AndroidInFrame.cs" />
+    <Compile Include="Renderers\CustomEditorRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DroidFireBaseService.cs" />

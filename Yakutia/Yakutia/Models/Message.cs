@@ -8,7 +8,7 @@
 			set;
 		}
 
-		public bool IsTextIn
+		public bool IsTextOut
 		{
 			get;
 			set;

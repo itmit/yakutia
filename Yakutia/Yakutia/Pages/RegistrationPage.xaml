@@ -8,6 +8,7 @@
              x:Class="Yakutia.Pages.RegistrationPage">
     <ContentPage.Content>
         <!--Страница регистрации-->
+        <ScrollView>
         <StackLayout Margin="0,20" HorizontalOptions="Center" Spacing="20" WidthRequest="320">
             <Entry Text="{Binding Name}" Placeholder="Имя"/>
             <Entry Text="{Binding LastName}" Placeholder="Фамилия"/>
@@ -39,5 +40,6 @@
                 <Button Text="Войти" Command="{Binding BackButtonCommand}"/>
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

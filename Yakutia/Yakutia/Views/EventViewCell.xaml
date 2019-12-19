@@ -8,9 +8,9 @@
   <ViewCell.View>
       <Frame CornerRadius="20" BorderColor="Gray" Margin="20">
           <StackLayout>
-              <Label TextColor="Black" FontSize="16" HorizontalOptions="Center" Text="{Binding Head}"/>
-              <Label Text="{Binding Body}"></Label>
-          </StackLayout>
+                <Label Text="{Binding DateStart, StringFormat='{0:hh:mm}'}"/>
+                <Label TextColor="Black" FontSize="16" HorizontalOptions="Center" Text="{Binding Head}"/>
+            </StackLayout>
       </Frame>
     </ViewCell.View>
 </ViewCell>

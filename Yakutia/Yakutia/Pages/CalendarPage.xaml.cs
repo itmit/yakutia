@@ -31,7 +31,8 @@ namespace Yakutia.Pages
 					Content = dayLabel,
 					Style = (Style)Grid.Resources["Frame"]
 				};
-				var tapGestureRecognizer = new TapGestureRecognizer(); 
+				var tapGestureRecognizer = new TapGestureRecognizer();
+				//tapGestureRecognizer.Tapped += TapGestureRecognizerOnTapped;
 				tapGestureRecognizer.SetBinding(TapGestureRecognizer.CommandProperty, new Binding("ShowEventsCommand"));
 				tapGestureRecognizer.CommandParameter = day;
 				dayLayout.GestureRecognizers.Add(tapGestureRecognizer);
@@ -78,6 +79,14 @@ namespace Yakutia.Pages
 				{
 					week++;
 				}
+			}
+		}
+
+		private void TapGestureRecognizerOnTapped(object sender, EventArgs e)
+		{
+			if (sender is Frame frame)
+			{
+				frame.BackgroundColor = Color.Black;
 			}
 		}
 

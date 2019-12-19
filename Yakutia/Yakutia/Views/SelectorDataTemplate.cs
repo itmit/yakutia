@@ -5,8 +5,8 @@ namespace Yakutia.Views
 {
 	public class SelectorDataTemplate : DataTemplateSelector
 	{
-		private readonly DataTemplate textInDataTemplate;
-		private readonly DataTemplate textOutDataTemplate;
+		private readonly DataTemplate _textInDataTemplate;
+		private readonly DataTemplate _textOutDataTemplate;
 
 		protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
 		{
@@ -14,14 +14,14 @@ namespace Yakutia.Views
 			if (messageVm == null)
 				return null;
 
-			return messageVm.IsTextIn ? this.textInDataTemplate : this.textOutDataTemplate;
+			return messageVm.IsTextOut ? _textOutDataTemplate : _textInDataTemplate;
 		}
 
 
 		public SelectorDataTemplate()
 		{
-			this.textInDataTemplate = new DataTemplate(typeof(TextInViewCell));
-			this.textOutDataTemplate = new DataTemplate(typeof(TextOutViewCell));
+			this._textInDataTemplate = new DataTemplate(typeof(TextInViewCell));
+			this._textOutDataTemplate = new DataTemplate(typeof(TextOutViewCell));
 		}
 
 	}

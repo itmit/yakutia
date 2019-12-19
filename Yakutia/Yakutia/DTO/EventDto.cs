@@ -32,6 +32,19 @@ namespace Yakutia.DTO
 			set;
 		}
 
+		[JsonProperty("picture")]
+		public string ImageSource
+		{
+			get;
+			set;
+		}
+
+		public string Place
+		{
+			get;
+			set;
+		}
+
 		[JsonProperty("date_start")]
 		public DateTime DateStart
 		{

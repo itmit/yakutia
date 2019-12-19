@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
 using System.Windows.Input;
+using AutoMapper.Mappers;
 using FreshMvvm;
 using Yakutia.Models;
 using Yakutia.Repositories;
@@ -49,11 +50,15 @@ namespace Yakutia.PageModels
 
 		public ICommand SendCommand => new FreshAwaitCommand(async (obj, tcs) =>
 		{
+			if (string.IsNullOrEmpty(TextToSend))
+			{
+				return;
+			}
 			bool res = false;
 			var newMessage = new Message
 			{
-				Text = OutText,
-				IsTextIn = false
+				Text = TextToSend,
+				IsTextOut = false
 			};
 			try
 			{
@@ -67,13 +72,14 @@ namespace Yakutia.PageModels
 
 			if (res)
 			{
-				Messages.Add(newMessage);
+				TextToSend = string.Empty;
+				Messages.Insert(0, newMessage);
 			}
 
 			tcs.SetResult(true);
 		});
 		
-		public string OutText
+		public string TextToSend
 		{
 			get;
 			set;
@@ -84,7 +90,9 @@ namespace Yakutia.PageModels
 			try
 			{
 				var service = new ChatService(_user.Token);
-				Messages = new ObservableCollection<Message>(await service.GetAll());
+				var mess = await service.GetAll();
+				mess.Reverse();
+				Messages = new ObservableCollection<Message>(mess);
 			}
 			catch (Exception e)
 			{

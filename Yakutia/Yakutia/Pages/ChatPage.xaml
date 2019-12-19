@@ -6,6 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
+             xmlns:partials="clr-namespace:Yakutia.Views.Partials;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.ChatPage"
              Title="Чат">
@@ -16,44 +17,33 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <!--Страница чат-->
-        <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand">
-            <Label
-                    Text="{Binding DialogLastUpdated}"
-                    HorizontalOptions="Center"
-                    TextColor="#242329" />
-            <ListView
-                    x:Name="MessagesListView"
-                    ItemTemplate="{StaticResource MessageTemplateSelector}"
-                    ItemsSource="{Binding Messages}"
-                    HasUnevenRows="True" SeparatorVisibility="None" IsEnabled="True" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <controls:ChatFrame Grid.Column="0" Padding="0" Margin="9">
-                    <StackLayout BackgroundColor="#cdd0d9" Margin="3,3,3,1">
-                        <Editor
-                                Text="{Binding OutText}"
-                                TextColor="Black"
-                                HorizontalOptions="FillAndExpand"
-                                BackgroundColor="Transparent"
-                                Keyboard="Chat" />
-                    </StackLayout>
-                </controls:ChatFrame>
-                <Image
-                        x:Name="SendButton"
-                        Grid.Column="1"
-                        Source="sendButton.png"
-                        WidthRequest="40"
-                        HeightRequest="40"
-                        Margin="4">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
-                                Command="{Binding SendCommand}" />
-                    </Image.GestureRecognizers>
-                </Image>
-            </Grid>
-        </StackLayout>
+        <Grid RowSpacing="0" 
+           ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <controls:ExtendedListView Grid.Row="0" 
+                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                 ItemsSource="{Binding Messages}" 
+                 Margin="0"
+                 Rotation="180"
+                 ItemTapped="OnListTapped"
+                 FlowDirection="RightToLeft"
+                 HasUnevenRows="True"
+                 VerticalOptions="FillAndExpand" 
+                 SeparatorColor="Transparent"
+                 ItemAppearingCommand="{Binding MessageAppearingCommand}"
+                 ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
+            </controls:ExtendedListView>
+            <BoxView HorizontalOptions="FillAndExpand"
+                 HeightRequest="1"
+                 BackgroundColor="LightGray"
+                 Grid.Row="1"/>
+            <partials:ChatInputBarView Grid.Row="2"
+                                   Margin="0,0,10,0"
+                                   x:Name="ChatInput"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

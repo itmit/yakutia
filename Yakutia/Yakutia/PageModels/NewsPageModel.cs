@@ -21,7 +21,7 @@ namespace Yakutia.PageModels
 			var rep = new UserRepository();
 			_user = rep.GetAll()
 					   .SingleOrDefault();
-			LoadData();
+			RefreshCommand.Execute(null);
 		}
 		public ICommand RefreshCommand =>
 			new FreshAwaitCommand((obj, tcs) =>
