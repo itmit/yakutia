@@ -3,29 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.CompetitionsDetailPage">
     <ContentPage.Content>
         <!--Страница с перечнем конкурсов-->
-        <StackLayout Margin="20,20,20,0">
-            <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" SelectionMode="None" ItemsSource="{Binding Briefcase}" Grid.Row="0">
+        <pullToRefresh:PullToRefreshLayout
+            IsPullToRefreshEnabled="True"
+            RefreshCommand="{Binding RefreshCommand}"
+            IsRefreshing="{Binding IsRefreshing}"
+            RefreshColor="Blue">
+            <ListView Margin="10,5" 
+                      ItemSelected="ListView_ItemSelected"
+                      VerticalScrollBarVisibility="Never"
+                      HasUnevenRows="True"
+                      SelectedItem="{Binding SelectedNews}"
+                      ItemsSource="{Binding News}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Label Margin="5,10" TextColor="Black">
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <FormattedString.Spans>
-                                            <Span Text="Конкурс "></Span>
-                                            <Span Text="{Binding Number}"></Span>
-                                        </FormattedString.Spans>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                        </ViewCell>
+                        <views:NewsViewCell/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </pullToRefresh:PullToRefreshLayout>
     </ContentPage.Content>
 </ContentPage>

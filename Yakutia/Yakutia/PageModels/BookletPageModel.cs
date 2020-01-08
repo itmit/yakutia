@@ -52,7 +52,8 @@ namespace Yakutia.PageModels
 		{
 			if (obj is string section)
 			{
-				CoreMethods.PushPageModel<DocumentsPageModel>(_documents.Where(doc => doc.Section.Equals(section)));
+				DocumentsPageModel.StTitle = section;
+				CoreMethods.PushPageModel<DocumentsPageModel>(_documents?.Where(doc => doc.Section.Equals(section)));
 			}
 			tcs.SetResult(true);
 		});

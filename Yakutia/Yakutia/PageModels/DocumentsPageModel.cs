@@ -30,15 +30,14 @@ namespace Yakutia.PageModels
 			{
 				Documents = new ObservableCollection<Document>(docs);
 			}
+		}
 
-			CrossDownloadManager.Current.CollectionChanged += (sender, e) =>
-				System.Diagnostics.Debug.WriteLine(
-					"[DownloadManager] " + e.Action +
-					" -> New items: " + (e.NewItems?.Count ?? 0) +
-					" at " + e.NewStartingIndex +
-					" || Old items: " + (e.OldItems?.Count ?? 0) +
-					" at " + e.OldStartingIndex
-				);
+		public string Title => StTitle;
+
+		public static string StTitle
+		{
+			get;
+			set;
 		}
 
 		private async void CheckPermissionStorage()

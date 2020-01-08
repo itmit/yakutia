@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
+             Title="{Binding Title}"
              x:Class="Yakutia.Pages.DocumentsPage">
     <ContentPage.Content>
         <Grid>
@@ -14,7 +15,9 @@
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand"
                    HorizontalTextAlignment="Center"/>
-            <ListView ItemsSource="{Binding Documents}" SelectedItem="{Binding SelectedDocument}">
+            <ListView ItemsSource="{Binding Documents}"
+                      HasUnevenRows="True"
+                      SelectedItem="{Binding SelectedDocument}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <views:DocumentViewCell/>

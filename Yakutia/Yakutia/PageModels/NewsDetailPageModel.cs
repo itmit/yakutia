@@ -6,7 +6,7 @@ namespace Yakutia.PageModels
 {
 	class NewsDetailPageModel : FreshBasePageModel
 	{
-		public News News
+		public BaseInfoBlock News
 		{
 			get; 
 			private set;
@@ -15,7 +15,7 @@ namespace Yakutia.PageModels
 		public override void Init(object initData)
 		{
 			base.Init(initData);
-			if (initData is News news)
+			if (initData is BaseInfoBlock news)
 			{
 				News = news;
 				HtmlSource = new HtmlWebViewSource

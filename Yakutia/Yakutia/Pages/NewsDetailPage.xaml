@@ -8,22 +8,20 @@
              x:Class="Yakutia.Pages.NewsDetailPage">
     <ContentPage.Content>
         <!--Детальная страница новостей-->
-        <ScrollView>
-            <StackLayout Margin="20">
-                <Frame Padding="0" IsClippedToBounds="True" CornerRadius="10" HorizontalOptions="Center" Margin="5,0,0,0">
-                    <forms:CachedImage Source="{Binding News.ImageSource}" Aspect="AspectFill"/>
-                </Frame>
-                <Label Text="{Binding News.Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
+        <StackLayout Margin="20">
+            <Frame Padding="0" IsClippedToBounds="True" CornerRadius="10" HorizontalOptions="Center" Margin="5,0,0,0">
+                <forms:CachedImage Source="{Binding News.ImageSource}" Aspect="AspectFill"/>
+            </Frame>
+            <Label Text="{Binding News.Title}" FontSize="16" FontAttributes="Bold" TextColor="Black"></Label>
 
-                <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <WebView VerticalOptions="FillAndExpand"
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <WebView VerticalOptions="FillAndExpand"
                              MinimumHeightRequest="5"
                              MinimumWidthRequest="5"
                              HorizontalOptions="FillAndExpand"
                              Navigating="WebView_OnNavigating"
                              Source="{Binding HtmlSource}"/>
-                </StackLayout>
             </StackLayout>
-        </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

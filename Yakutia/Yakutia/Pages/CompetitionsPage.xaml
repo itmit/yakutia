@@ -11,12 +11,12 @@
         <StackLayout Margin="20" Spacing="25">
             <Label Text="• РЕГИОНАЛЬНЫЕ" TextColor="Black" FontAttributes="Bold" FontSize="16">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
+                    <TapGestureRecognizer Command="{Binding OpenUpRegionalContests}" NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
             <Label Text="• ФЕДЕРАЛЬНЫЕ" TextColor="Black" FontAttributes="Bold" FontSize="16">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
+                    <TapGestureRecognizer Command="{Binding OpenUpFederalContests}"  NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
