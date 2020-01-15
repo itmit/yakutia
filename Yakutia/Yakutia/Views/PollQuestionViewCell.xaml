@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
+             xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Views.PollQuestionViewCell">
+    <ViewCell.View>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Number, StringFormat='{0}.'}" TextColor="#19365f" FontAttributes="Bold" VerticalOptions="Center"
+                       FontSize="16" Margin="0,0,5,0"/>
+                <Label Text="{Binding QuestionText}" TextColor="#19365f" FontAttributes="Bold"
+                       VerticalOptions="Center" FontSize="16" />
+            </StackLayout>
+            <controls:RepeaterView
+                ItemsSource="{Binding Answers}">
+                <controls:RepeaterView.ItemTemplate>
+                    <DataTemplate>
+                        <views:AnswerViewCell />
+                    </DataTemplate>
+                </controls:RepeaterView.ItemTemplate>
+            </controls:RepeaterView>
+            <BoxView HeightRequest="2" BackgroundColor="#dee4ea" />
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

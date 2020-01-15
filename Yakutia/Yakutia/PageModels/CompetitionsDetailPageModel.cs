@@ -29,6 +29,7 @@ namespace Yakutia.PageModels
 				RefreshCommand.Execute(null);
 			}
 		}
+
 		public ICommand RefreshCommand =>
 			new FreshAwaitCommand((obj, tcs) =>
 			{

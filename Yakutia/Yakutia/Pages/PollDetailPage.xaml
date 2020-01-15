@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
+             xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
+             mc:Ignorable="d"
+             x:Class="Yakutia.Pages.PollDetailPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20,10" VerticalOptions="Fill">
+                <controls:RepeaterView
+                    ItemsSource="{Binding Questions}">
+                    <controls:RepeaterView.ItemTemplate>
+                        <DataTemplate>
+                            <views:PollQuestionViewCell />
+                        </DataTemplate>
+                    </controls:RepeaterView.ItemTemplate>
+                </controls:RepeaterView>
+                <Button Text="Закончить опрос" TextColor="White" Padding="15,10" Margin="0,0,0,20"
+                        BackgroundColor="#228bcc" VerticalOptions="EndAndExpand" HorizontalOptions="Center"
+                        Command="{Binding PassPollCommand}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

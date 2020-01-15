@@ -59,6 +59,7 @@ namespace Yakutia
 			masterNavigation.AddPage<CompetitionsPageModel>("Конкурсы");
 			masterNavigation.AddPage<BriefcasePageModel>("Успешные кейсы/практики");
 			masterNavigation.AddPage<CalendarPageModel>("Календарь событий");
+			masterNavigation.AddPage<PollsPageModel>("Онлайн голосование");
 			masterNavigation.AddPage<ChatPageModel>("Чат");
 			masterNavigation.AddPage<ContactsPageModel>("Контакты");
 			masterNavigation.AddPage<GrantsPageModel>("Президентские гранты");

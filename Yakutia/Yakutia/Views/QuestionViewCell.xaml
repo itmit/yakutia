@@ -15,9 +15,9 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <customControls:Accordion TitleView="{Binding TextResponse}">
+                <customControls:Accordion TitleView="{Binding Question}">
                     <customControls:Accordion.AccordionContentView>
-                        <Label Text="{Binding TextAnswer}" TextColor="Black" Margin="5" HorizontalOptions="EndAndExpand"/>
+                        <Label Text="{Binding Answer}" TextColor="Black" Margin="5" HorizontalOptions="EndAndExpand"/>
                     </customControls:Accordion.AccordionContentView>
                     <customControls:Accordion.IndicatorView>
                         <Label Text="▼" TextColor="Blue"/>

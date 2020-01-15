@@ -9,7 +9,12 @@
              Title="Вопросы—Ответы">
     <ContentPage.Content>
         <!--Страница вопросы-ответы-->
-        <ListView HasUnevenRows="True" VerticalScrollBarVisibility="Never" Margin="5,5" ItemsSource="{Binding Briefcase}" SeparatorVisibility="None" SelectionMode="None">
+        <ListView HasUnevenRows="True"
+                  VerticalScrollBarVisibility="Never"
+                  Margin="5,5"
+                  ItemsSource="{Binding Faqs}"
+                  SeparatorVisibility="None"
+                  SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <views:QuestionViewCell/>
