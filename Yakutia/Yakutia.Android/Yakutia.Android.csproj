@@ -110,13 +110,9 @@
     <AndroidResource Include="Resources\mipmap-hdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Windows.png" />
@@ -165,6 +161,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
