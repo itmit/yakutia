@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Firebase.CloudMessaging;
 using Foundation;
 using UIKit;
+using UserNotifications;
+using pushMesseges = Firebase.Core.App;
 
 namespace Yakutia.iOS
 {
@@ -20,10 +22,27 @@ namespace Yakutia.iOS
         //
         // You have 17 seconds to return from this method, or iOS will terminate your application.
         //
+        public void DidRefreshRegistrationToken(Messaging messaging, string fcmToken) 
+                            => System.Diagnostics.Debug.WriteLine($"FCM Token: {fcmToken}");
+
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+            pushMesseges.Configure();
+
+            LoadApplication(application: new Yakutia.App());
+
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10,0))
+            {
+                var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
+                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
+                {
+                    Console.WriteLine(granted);
+                });
+            }
+
+            UIApplication.SharedApplication.RegisterForRemoteNotifications();
 
             return base.FinishedLaunching(app, options);
         }

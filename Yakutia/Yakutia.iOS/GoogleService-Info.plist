@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1009929752220-19i08e717t8qun9j20vbnsegpg7vmhnd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1009929752220-19i08e717t8qun9j20vbnsegpg7vmhnd</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCe8aQj0nepi8xQFZv78eMXaBvdWud0SJE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1009929752220</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.itmit.nko</string>
+	<key>PROJECT_ID</key>
+	<string>nko-yakutia</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nko-yakutia.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1009929752220:ios:1519df1092bc715557a759</string>
+	<key>DATABASE_URL</key>
+	<string>https://nko-yakutia.firebaseio.com</string>
+</dict>
+</plist>
