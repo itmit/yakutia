@@ -6,6 +6,7 @@ namespace Yakutia.PageModels
 {
 	class NewsDetailPageModel : FreshBasePageModel
 	{
+		
 		public BaseInfoBlock News
 		{
 			get; 

@@ -29,7 +29,9 @@
                                           Grid.Column="0" />
             <Image Grid.Row="0"
                    Grid.Column="1"
-                   Source="sendButton">
+                   Source="ic_send.png"
+                   WidthRequest="24"
+                   HeightRequest="24">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
                         Command="{Binding SendCommand}" />

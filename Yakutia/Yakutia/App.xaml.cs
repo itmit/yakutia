@@ -42,7 +42,10 @@ namespace Yakutia
 		
 		public void OpenAuthorizationPage()
 		{
-			DependencyService.Get<IFireBaseService>().DeleteInstance();
+			if (Device.Android == "Android")
+			{
+				DependencyService.Get<IFireBaseService>().DeleteInstance();
+			}
 			var loginPage = FreshPageModelResolver.ResolvePageModel<AuthorizationPageModel>();
 			var loginContainer = new FreshNavigationContainer(loginPage, NavigationContainerNames.AuthenticationContainer);
 

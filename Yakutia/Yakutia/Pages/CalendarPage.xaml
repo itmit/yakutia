@@ -61,6 +61,11 @@
                           SelectedItem="{Binding SelectedEvent}"
                           ItemSelected="ListView_OnItemSelected"
                           HasUnevenRows="True" >
+                    <ListView.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="White"/>
+                        </OnPlatform>
+                    </ListView.BackgroundColor>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <views:EventViewCell/>

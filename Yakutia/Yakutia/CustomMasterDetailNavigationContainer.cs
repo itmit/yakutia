@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using FreshMvvm;
 using Xamarin.Forms;
@@ -8,6 +9,7 @@ namespace Yakutia
 {
 	public class CustomMasterDetailNavigationContainer : FreshMasterDetailNavigationContainer
 	{
+
 		protected override void CreateMenuPage(string menuPageTitle, string menuIcon = null)
 		{
 			base.CreateMenuPage(menuPageTitle, menuIcon);
@@ -16,7 +18,9 @@ namespace Yakutia
 			{
 				if (masterNavPage.CurrentPage is ContentPage page)
 				{
-					View view = page.Content;
+					ListView view = (ListView)page.Content;
+					DataTemplate dataTemplate = new DataTemplate();
+					view.ItemSelected += Kk;
 					var stack = new StackLayout();
 					stack.Children.Add(view);
 					var button = new Button
@@ -30,6 +34,11 @@ namespace Yakutia
 					page.Content = stack;
 				}
 			}
+		}
+
+		private void Kk(object sender, SelectedItemChangedEventArgs e)
+		{
+			
 		}
 
 		private void ButtonOnClicked(object sender, EventArgs e)

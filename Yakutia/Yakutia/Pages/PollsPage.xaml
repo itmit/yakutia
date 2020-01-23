@@ -12,6 +12,11 @@
                       HasUnevenRows="True" 
                       SelectedItem="{Binding SelectedPoll}"
                       ItemSelected="ListView_OnItemSelected">
+                <ListView.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="iOS" Value="White"/>
+                    </OnPlatform>
+                </ListView.BackgroundColor>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <views:PollViewCell />

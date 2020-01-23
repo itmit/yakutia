@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Firebase.CloudMessaging;
 using Foundation;
+using FFImageLoading.Forms.Platform;
 using UIKit;
 using UserNotifications;
 using pushMesseges = Firebase.Core.App;
@@ -30,7 +31,7 @@ namespace Yakutia.iOS
             global::Xamarin.Forms.Forms.Init();
 
             pushMesseges.Configure();
-
+            CachedImageRenderer.Init();
             LoadApplication(application: new Yakutia.App());
 
             if (UIDevice.CurrentDevice.CheckSystemVersion(10,0))

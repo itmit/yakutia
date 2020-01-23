@@ -10,16 +10,16 @@
         <!--Страница регистрации-->
         <ScrollView>
         <StackLayout Margin="0,20" HorizontalOptions="Center" Spacing="20" WidthRequest="320">
-            <Entry Text="{Binding Name}" Placeholder="Имя"/>
-            <Entry Text="{Binding LastName}" Placeholder="Фамилия"/>
+                <Entry Text="{Binding Name}" Placeholder="Имя" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry Text="{Binding LastName}" Placeholder="Фамилия" TextColor="Black" PlaceholderColor="Black"/>
             <Label Text="{Binding Errors.Name, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Name, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Name, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry Text="{Binding Email}" Placeholder="E-mail"/>
+                <Entry Text="{Binding Email}" Placeholder="E-mail" TextColor="Black" PlaceholderColor="Black"/>
             <Label Text="{Binding Errors.Email, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"/>
-            <Picker SelectedItem="{Binding Type}" Title="Пользователь">
+                <Picker SelectedItem="{Binding Type}" Title="Пользователь" TextColor="Black" TitleColor="Black">
                 <Picker.Items>
                     <x:String>специалист</x:String>
                     <x:String>представитель нко</x:String>
@@ -29,11 +29,11 @@
             <Label Text="{Binding Errors.Type, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Type, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Type, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry IsPassword="True" Text="{Binding Password}" Placeholder="Пароль"/>
+                <Entry IsPassword="True" Text="{Binding Password}" Placeholder="Пароль" TextColor="Black" PlaceholderColor="Black"/>
             <Label Text="{Binding Errors.Password, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry IsPassword="True" Text="{Binding ConfirmPassword}" Placeholder="Подтверждение пароля"/>
+                <Entry IsPassword="True" Text="{Binding ConfirmPassword}" Placeholder="Подтверждение пароля" TextColor="Black" PlaceholderColor="Black"/>
 
             <StackLayout>
                 <Button Text="Зарегистрироваться" Command="{Binding RegisterCommand}"/>

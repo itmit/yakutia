@@ -10,11 +10,11 @@
     <ContentPage.Content>
         <!--Страница авторизации-->
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
-            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail" Visual="Material"/>
+            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail" Visual="Material" TextColor="Black" PlaceholderColor="Black"/>
             <Label Text="{Binding Errors.Email, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True" Visual="Material"/>
+            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True" Visual="Material" TextColor="Black" PlaceholderColor="Black"/>
             <Label Text="{Binding Errors.Password, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"/>

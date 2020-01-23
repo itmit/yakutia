@@ -15,6 +15,11 @@
                   ItemsSource="{Binding Faqs}"
                   SeparatorVisibility="None"
                   SelectionMode="None">
+            <ListView.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="White"></On>
+                </OnPlatform>
+            </ListView.BackgroundColor>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <views:QuestionViewCell/>
