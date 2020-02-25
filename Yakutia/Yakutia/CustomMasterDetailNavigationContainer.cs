@@ -19,7 +19,6 @@ namespace Yakutia
 				if (masterNavPage.CurrentPage is ContentPage page)
 				{
 					ListView view = (ListView)page.Content;
-					DataTemplate dataTemplate = new DataTemplate();
 					view.ItemSelected += Kk;
 					var stack = new StackLayout();
 					stack.Children.Add(view);
@@ -32,6 +31,7 @@ namespace Yakutia
 					button.Clicked += ButtonOnClicked;
 					stack.Children.Add(button);
 					page.Content = stack;
+					NavigationPage.SetHasNavigationBar(page, false);
 				}
 			}
 		}

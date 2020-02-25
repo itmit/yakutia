@@ -5,8 +5,11 @@
              xmlns:local="clr-namespace:Yakutia.CustomControls"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.QuestionAnswerPage"
-             Title="Вопросы—Ответы">
+             x:Class="Yakutia.Pages.QuestionAnswerPage">
+    <NavigationPage.TitleView>
+        <Label Text="Вопросы—Ответы" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница вопросы-ответы-->
         <ListView HasUnevenRows="True"

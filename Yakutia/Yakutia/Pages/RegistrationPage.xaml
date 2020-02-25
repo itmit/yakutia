@@ -6,20 +6,24 @@
              mc:Ignorable="d"
              Visual="Material"
              x:Class="Yakutia.Pages.RegistrationPage">
+    <NavigationPage.TitleView>
+        <Label Text="Регистрация" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница регистрации-->
-        <ScrollView>
+        <ScrollView Margin="0,0,0,5">
         <StackLayout Margin="0,20" HorizontalOptions="Center" Spacing="20" WidthRequest="320">
-                <Entry Text="{Binding Name}" Placeholder="Имя" TextColor="Black" PlaceholderColor="Black"/>
-                <Entry Text="{Binding LastName}" Placeholder="Фамилия" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry Text="{Binding Name}" Placeholder="Имя" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                <Entry Text="{Binding LastName}" Placeholder="Фамилия" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
             <Label Text="{Binding Errors.Name, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Name, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Name, Converter={StaticResource NullToBoolConverter}}"/>
-                <Entry Text="{Binding Email}" Placeholder="E-mail" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry Text="{Binding Email}" Placeholder="E-mail" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
             <Label Text="{Binding Errors.Email, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"/>
-                <Picker SelectedItem="{Binding Type}" Title="Пользователь" TextColor="Black" TitleColor="Black">
+                <Picker SelectedItem="{Binding Type}" Title="Пользователь" TextColor="Black" TitleColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular">
                 <Picker.Items>
                     <x:String>специалист</x:String>
                     <x:String>представитель нко</x:String>
@@ -29,11 +33,11 @@
             <Label Text="{Binding Errors.Type, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Type, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Type, Converter={StaticResource NullToBoolConverter}}"/>
-                <Entry IsPassword="True" Text="{Binding Password}" Placeholder="Пароль" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry IsPassword="True" Text="{Binding Password}" Placeholder="Пароль" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
             <Label Text="{Binding Errors.Password, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"/>
-                <Entry IsPassword="True" Text="{Binding ConfirmPassword}" Placeholder="Подтверждение пароля" TextColor="Black" PlaceholderColor="Black"/>
+                <Entry IsPassword="True" Text="{Binding ConfirmPassword}" Placeholder="Подтверждение пароля" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
 
             <StackLayout>
                 <Button Text="Зарегистрироваться" Command="{Binding RegisterCommand}"/>

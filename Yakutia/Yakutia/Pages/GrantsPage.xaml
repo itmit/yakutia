@@ -4,21 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.GrantsPage"
-             Title="Президентские гранты">
+             x:Class="Yakutia.Pages.GrantsPage">
+    <NavigationPage.TitleView>
+        <Label Text="Президентские гранты" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница президентские гранты-->
         <StackLayout Spacing="10" Margin="20">
-            <StackLayout.Resources>
-                <ResourceDictionary>
-                    <Style x:Key="Label" TargetType="Label">
-                        <Setter Property="TextColor" Value="Black"/>
-                        <Setter Property="FontSize" Value="12"/>
-                    </Style>
-                </ResourceDictionary>
-            </StackLayout.Resources>
-            <Label Text="О конкурсе" Style="{StaticResource Label}" FontSize="16"/>
-            <Image Source="grant.png" Aspect="AspectFill" HorizontalOptions="Center" Margin="0,15"></Image>
+            <Label Text="О конкурсе" TextColor="Black"/>
+            <Image Source="pic_fpg_1920w.png" Aspect="AspectFill" HorizontalOptions="Center" Margin="0,15" WidthRequest="200"/>
             <WebView Source="{Binding Html}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
     </ContentPage.Content>

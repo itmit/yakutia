@@ -70,6 +70,8 @@
     <BundleResource Include="GoogleService-Info.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\NotoSans-Bold.ttf" />
+    <BundleResource Include="Resources\NotoSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1201.png">

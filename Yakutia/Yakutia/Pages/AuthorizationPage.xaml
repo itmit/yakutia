@@ -10,17 +10,22 @@
     <ContentPage.Content>
         <!--Страница авторизации-->
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
-            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail" Visual="Material" TextColor="Black" PlaceholderColor="Black"/>
+            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
             <Label Text="{Binding Errors.Email, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True" Visual="Material" TextColor="Black" PlaceholderColor="Black"/>
+            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
             <Label Text="{Binding Errors.Password, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"/>
+            <Label Text="Забыли пароль?" TextColor="Black" HorizontalOptions="EndAndExpand" Margin="0,10">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenRecoveryCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
             <StackLayout>
-                <Button Text="Войти" Command="{Binding SignInCommand}" Visual="Material"/>
-                <Button Text="Регистрация" Command="{Binding OpenRegistrationCommand}" Visual="Material"/>
+                <Button Text="Войти" Command="{Binding SignInCommand}"/>
+                <Button Text="Регистрация" Command="{Binding OpenRegistrationCommand}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

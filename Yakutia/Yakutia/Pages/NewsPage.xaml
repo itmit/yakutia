@@ -6,8 +6,11 @@
              xmlns:views="clr-namespace:Yakutia.Views"
              xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.NewsPage"
-             Title="Новости">
+             x:Class="Yakutia.Pages.NewsPage">
+    <NavigationPage.TitleView>
+        <Label Text="Новости" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница списка новостей-->
         <pullToRefresh:PullToRefreshLayout

@@ -6,8 +6,11 @@
              xmlns:controls="clr-namespace:Yakutia.Controls;assembly=Yakutia"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.ContactsPage"
-             Title="Контакты">
+             x:Class="Yakutia.Pages.ContactsPage">
+    <NavigationPage.TitleView>
+        <Label Text="Контакты" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница контакты-->
         <ScrollView>

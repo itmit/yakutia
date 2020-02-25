@@ -5,8 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.BookletPage" 
-             Title="Правовые памятки">
+             x:Class="Yakutia.Pages.BookletPage">
+    <NavigationPage.TitleView>
+        <Label Text="Правовые памятки" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница правовые памятки-->
         <pullToRefresh:PullToRefreshLayout
@@ -16,15 +19,7 @@
             RefreshColor="Blue">
             <ScrollView>
                 <StackLayout Margin="20" Spacing="10">
-                    <StackLayout.Resources>
-                        <ResourceDictionary>
-                            <Style x:Key="Label" TargetType="Label">
-                                <Setter Property="TextColor" Value="Black"/>
-                                <Setter Property="FontSize" Value="16"/>
-                            </Style>
-                        </ResourceDictionary>
-                    </StackLayout.Resources>
-                    <Label Text="1. Регистрация НКО" Style="{StaticResource Label}"></Label>
+                    <Label Text="1. Регистрация НКО" TextColor="Black"/>
                     <StackLayout Margin="10,0" Spacing="10">
                         <Label Text="1.1. Создание и регистрация НКО">
                             <Label.GestureRecognizers>
@@ -57,12 +52,12 @@
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
-                    <Label Text="2. Включение в реестр ИОПУ" Style="{StaticResource Label}">
+                    <Label Text="2. Включение в реестр ИОПУ" TextColor="Black">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="2. Включение в реестр ИОПУ" NumberOfTapsRequired="1"/>
                         </Label.GestureRecognizers>
                     </Label>
-                    <Label Text="3. Отчетность НКО" Style="{StaticResource Label}"></Label>
+                    <Label Text="3. Отчетность НКО" TextColor="Black"/>
                     <StackLayout Margin="10,0" Spacing="10">
                         <Label Text="3.1. Казачьи общества">
                             <Label.GestureRecognizers>
@@ -95,7 +90,7 @@
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
-                    <Label Text="4. Обязанности и ответственность НКО" Style="{StaticResource Label}">
+                    <Label Text="4. Обязанности и ответственность НКО" TextColor="Black">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="4. Обязанности и ответственность НКО"  NumberOfTapsRequired="1"/>
                         </Label.GestureRecognizers>

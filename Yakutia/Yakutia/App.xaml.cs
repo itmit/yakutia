@@ -42,7 +42,7 @@ namespace Yakutia
 		
 		public void OpenAuthorizationPage()
 		{
-			if (Device.Android == "Android")
+			if (Device.Android == Device.RuntimePlatform)
 			{
 				DependencyService.Get<IFireBaseService>().DeleteInstance();
 			}
@@ -66,6 +66,7 @@ namespace Yakutia
 			masterNavigation.AddPage<ChatPageModel>("Чат");
 			masterNavigation.AddPage<ContactsPageModel>("Контакты");
 			masterNavigation.AddPage<GrantsPageModel>("Президентские гранты");
+			masterNavigation.AddPage<ApplicationViewModel>("О приложении");
 			
 			NavigationPage.SetHasNavigationBar(masterNavigation.Master, false);
 			return masterNavigation;

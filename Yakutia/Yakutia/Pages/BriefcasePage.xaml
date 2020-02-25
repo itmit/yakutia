@@ -6,8 +6,11 @@
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.BriefcasePage"
-             Title="Успешные кейсы/практики">
+             x:Class="Yakutia.Pages.BriefcasePage">
+    <NavigationPage.TitleView>
+        <Label Text="Успешные кейсы/практики" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница успешные кейсы/практики-->
         <pullToRefresh:PullToRefreshLayout

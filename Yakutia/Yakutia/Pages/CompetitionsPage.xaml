@@ -4,17 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.CompetitionsPage"
-             Title="Конкурсы">
+             x:Class="Yakutia.Pages.CompetitionsPage">
+    <NavigationPage.TitleView>
+        <Label Text="Конкурсы" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница конкурсы-->
         <StackLayout Margin="20" Spacing="25">
-            <Label Text="• РЕГИОНАЛЬНЫЕ" TextColor="Black" FontAttributes="Bold" FontSize="16">
+            <Label Text="• РЕГИОНАЛЬНЫЕ" TextColor="Black" FontSize="Body" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenUpRegionalContests}" NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="• ФЕДЕРАЛЬНЫЕ" TextColor="Black" FontAttributes="Bold" FontSize="16">
+            <Label Text="• ФЕДЕРАЛЬНЫЕ" TextColor="Black" FontSize="Body" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenUpFederalContests}"  NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>

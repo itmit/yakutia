@@ -6,6 +6,10 @@
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.PollsPage">
+    <NavigationPage.TitleView>
+        <Label Text="Онлайн голосование" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding Polls}" 
