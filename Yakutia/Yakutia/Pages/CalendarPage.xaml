@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
+             xmlns:calendar="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.CalendarPage">
     <NavigationPage.TitleView>
@@ -14,50 +15,37 @@
         <!--Страница календарь событий-->
         <ScrollView>
             <StackLayout>
-                <Grid HorizontalOptions="Center" x:Name="Grid">
-                    <Grid.Resources>
-                        <ResourceDictionary>
-                            <Style x:Key="Frame" TargetType="Frame">
-                                <Setter Property="BackgroundColor" Value="White"/>
-                                <Setter Property="CornerRadius" Value="40"/>
-                                <Setter Property="Padding" Value="0"/>
-                                <Setter Property="WidthRequest" Value="40"/>
-                                <Setter Property="HeightRequest" Value="40"/>
-                                <Setter Property="BorderColor" Value="Gray"/>
-                            </Style>
-                            <Style x:Key="Label" TargetType="Label">
-                                <Setter Property="TextColor" Value="Black"/>
-                                <Setter Property="VerticalOptions" Value="Center"/>
-                                <Setter Property="HorizontalOptions" Value="Center"/>
-                            </Style>
-                        </ResourceDictionary>
-                    </Grid.Resources>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
+                <calendar:Calendar
+                    Padding="10,20"
+                    TitleLeftArrowTextColor="#1976D2"
+                    TitleRightArrowTextColor="#1976D2"
+                    TitleLabelFontSize="18"
+                    TitleLabelFontFamily="NotoSans-Bold.ttf#NotoSans-Bold"
+                    TitleLabelTextColor="#1976D2"
+                    DatesBackgroundColor="#E3F2FD"
+                    SelectedBorderWidth="0"
+                    SelectedTextColor="#FFFFFF"
+                    SelectedBackgroundColor="#1976D2"
+                    SelectedBorderColor="White"
+                    WeekdaysFontSize="16"
+                    WeekdaysFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
+                    WeekdaysTextColor="#1976D2"
+                    DatesFontSize="16"
+                    DatesTextColor="Black"
+                    DatesFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
+                    DatesFontFamilyOutsideMonth="NotoSans-Regular.ttf#NotoSans-Regular"
+                    BorderWidth="1"
+                    BorderColor="#82B1FF"
+                    DisabledBorderColor="#1976D2"
+                    ShowNumberOfWeek="False"
+                    StartDay="Monday"
+                    OuterBorderWidth="0"
+                    IsClippedToBounds="True"
+                    SelectedFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
+                    SelectedDate="{Binding ShowEventsCommand}"/>
 
-                    <Label Text="пн" VerticalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="1" Text="вт" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="2" Text="ср" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="3" Text="чт" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="4" Text="пт" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="5" Text="сб" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-                    <Label Grid.Row="0" Grid.Column="6" Text="вс" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+
+                <Grid HorizontalOptions="Center" x:Name="Grid">
                 </Grid>
 
                 <ListView ItemsSource="{Binding Events}" 

@@ -109,7 +109,7 @@ namespace Yakutia.CustomControls
         {
             await Task.WhenAll(
                 _accContent.TranslateTo(0, -10, AnimationDuration),
-                _indicatorContainer.RotateTo(90, AnimationDuration),
+                _indicatorContainer.RotateTo(0, AnimationDuration),
                 _accContent.FadeTo(0, 50)
                 );
             _accContent.IsVisible = false;
@@ -123,7 +123,7 @@ namespace Yakutia.CustomControls
             _accContent.IsVisible = true;
             await Task.WhenAll(
                 _accContent.TranslateTo(0, 10, AnimationDuration),
-                _indicatorContainer.RotateTo(0, AnimationDuration),
+                _indicatorContainer.RotateTo(-90, AnimationDuration),
                 _accContent.FadeTo(30, 50, Easing.SinIn)
             );
         }

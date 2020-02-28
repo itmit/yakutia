@@ -8,7 +8,7 @@
              x:Class="Yakutia.Views.Partials.ChatInputBarView">
   <ContentView.Content>
       <Grid RowSpacing="0" 
-            ColumnSpacing="0">
+            ColumnSpacing="5">
           <Grid.RowDefinitions>
               <RowDefinition Height="Auto" />
           </Grid.RowDefinitions>
@@ -23,10 +23,10 @@
                                           Keyboard="Chat"  
                                           IsExpandable="true"
                                           HorizontalOptions="FillAndExpand" 
-                                          PlaceholderColor="LightGray"
+                                          PlaceholderColor="Black"
                                           Placeholder="Сообщение"
                                           Grid.Row="0" 
-                                          Grid.Column="0" />
+                                          Grid.Column="0"/>
             <Image Grid.Row="0"
                    Grid.Column="1"
                    Source="ic_send.png"

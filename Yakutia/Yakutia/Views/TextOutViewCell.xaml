@@ -8,14 +8,19 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Views.TextOutViewCell">
   <ViewCell.View>
-        <Frame BackgroundColor="Gray"
+        <Frame BackgroundColor="White"
                Padding="10"
                Rotation="180"
                FlowDirection="LeftToRight"
-               HasShadow="false"
-               Margin="80,10,10,10">
-          <Label Text="{Binding Text}"
-                 TextColor="White"/>
-      </Frame>
+               CornerRadius="10"
+               HasShadow="True"
+               HorizontalOptions="StartAndExpand"
+               Margin="10">
+            <StackLayout Spacing="0">
+                <Label Text="Администратор" FontSize="Micro" TextColor="#3F51B5"/>
+                <Label Text="{Binding Text}"
+                       TextColor="Black"/>
+            </StackLayout>
+        </Frame>
     </ViewCell.View>
 </ViewCell>

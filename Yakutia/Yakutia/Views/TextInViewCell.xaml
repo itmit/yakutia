@@ -8,13 +8,18 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Views.TextInViewCell">
     <ViewCell.View>
-        <Frame BackgroundColor="LightBlue"
+        <Frame BackgroundColor="White"
                Rotation="180"
                FlowDirection="LeftToRight"
                Padding="10"
-               HasShadow="false"
-               Margin="10,10,80,10">
-          <Label Text="{Binding Text}"/>
-      </Frame>
+               HasShadow="True"
+               HorizontalOptions="End"
+               Margin="10"
+               CornerRadius="10">
+            <StackLayout Spacing="0">
+                <Label Text="Вы" FontSize="Micro" TextColor="#5C6BC0"/>
+                <Label Text="{Binding Text}" TextColor="Black"/>
+            </StackLayout>
+        </Frame>
     </ViewCell.View>
 </ViewCell>
