@@ -7,15 +7,21 @@
              Visual="Material"
              x:Class="Yakutia.Pages.AuthorizationRecoveryPage">
     <NavigationPage.TitleView>
-        <Label Text="Восстановления пароля" Style="{StaticResource TitleLabel}"/>
+        <Label Text="Восстановление пароля" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <!--Страница восстановления пароля-->
-        <StackLayout>
+        <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
+            <Entry Placeholder="Введите полученный код" IsPassword="True" PlaceholderColor="Black" TextColor="Black"/>
             <Entry Placeholder="Новый пароль" IsPassword="True" PlaceholderColor="Black" TextColor="Black"/>
             <Entry Placeholder="Повторите пароль" IsPassword="True" PlaceholderColor="Black" TextColor="Black"/>
-            <Button Text="Восстановить" TextColor="White"/>
+            <Button Text="Сменить пароль" TextColor="White" Margin="0,0,0,15"/>
+            <Label Text="Я не получил код!" HorizontalTextAlignment="Center" TextColor="Black">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

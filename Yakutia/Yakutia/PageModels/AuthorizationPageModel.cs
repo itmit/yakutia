@@ -94,6 +94,12 @@ namespace Yakutia.PageModels
 			private set;
 		} = new AuthErrorDto();
 
+		public ICommand OpenRecoveryCommand => new FreshAwaitCommand((obj, tcs) =>
+		{
+			CoreMethods.PushPageModel<AuthorizationRecoveryMainPageModel>();
+			tcs.SetResult(true);
+		});
+
 		public ICommand OpenRegistrationCommand => new FreshAwaitCommand((obj, tcs) =>
 		{
 			CoreMethods.PushPageModel<RegistrationPageModel>();

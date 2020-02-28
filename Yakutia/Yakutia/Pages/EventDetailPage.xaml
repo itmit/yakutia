@@ -10,9 +10,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20">
-                <Label Text="{Binding Event.Head}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
-                <Label Text="{Binding Event.Place}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
-                <Label Text="{Binding Event.DateStart, StringFormat='{0:dd.MM.yyyy hh:mm:ss}'}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                <Label Text="{Binding Event.Head}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
+                <Label Text="{Binding Event.Place}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
+                <Label Text="{Binding Event.DateStart, StringFormat='{0:dd.MM.yyyy hh:mm:ss}'}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
                 <Button Text="Зарегистрироваться на мероприятие" Command="{Binding RegisterForEventCommand}"/>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <WebView VerticalOptions="FillAndExpand"

@@ -12,18 +12,22 @@
         <converters:NullToBoolConverter x:Key="NullToBoolConverter" />
         <Style x:Key="BackButton" TargetType="Button">
             <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,.1,80,80"/>
-            <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional" />
+            <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="VerticalOptions" Value="Center"/>
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="Image" Value="arrow.png" />
-            <Setter Property="FontFamily" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
         </Style>
         <!--Стиль для NavigationPage-->
         <Style x:Key="TitleLabel" TargetType="Label">
             <Setter Property="FontFamily" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
             <Setter Property="FontSize" Value="Large"/>
             <Setter Property="TextColor" Value="White"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#1976D2"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontFamily" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
         </Style>
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>

@@ -8,8 +8,8 @@
   <ViewCell.View>
       <Frame CornerRadius="20" BorderColor="Gray" Margin="20">
           <StackLayout>
-                <Label Text="{Binding DateStart, StringFormat='{0:hh:mm}'}"/>
-                <Label TextColor="Black" FontSize="16" HorizontalOptions="Center" Text="{Binding Head}"/>
+              <Label TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" HorizontalOptions="Center" Text="{Binding Head}"/>
+              <Label Text="{Binding DateStart, StringFormat='{0:hh:mm}'}"/>
             </StackLayout>
       </Frame>
     </ViewCell.View>

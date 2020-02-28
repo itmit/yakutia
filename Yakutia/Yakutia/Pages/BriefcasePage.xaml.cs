@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 using Yakutia.Page;
 using Yakutia.PageModels;
@@ -11,7 +12,7 @@ namespace Yakutia.Pages
         public BriefcasePage()
         {
             InitializeComponent();
-        }
+		}
 
 		private void ListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{

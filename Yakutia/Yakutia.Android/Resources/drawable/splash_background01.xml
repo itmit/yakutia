@@ -5,8 +5,8 @@
   </item>
   <item 
         android:gravity="center"
-        android:height="200dp"
-        android:width="200dp"
+        android:height="50dp"
+        android:width="50dp"
         android:drawable="@drawable/pic_slogan_512w">
     </item>
  </layer-list>
