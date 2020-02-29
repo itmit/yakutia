@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Views.TextInViewCell">
     <ViewCell.View>
-        <Frame BackgroundColor="White"
+        <Frame BackgroundColor="#F0F4C3"
                Rotation="180"
                FlowDirection="LeftToRight"
                Padding="10"
