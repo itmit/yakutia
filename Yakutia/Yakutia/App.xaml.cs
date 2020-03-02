@@ -52,23 +52,12 @@ namespace Yakutia
 			MainPage = loginContainer;
 		}
 
-		private FreshMasterDetailNavigationContainer CreateMasterDetailNavigationContainer()
+		private FreshNavigationContainer CreateMasterDetailNavigationContainer()
 		{
-			var masterNavigation = new CustomMasterDetailNavigationContainer();
-			masterNavigation.Init("Меню");
-			masterNavigation.AddPage<NewsPageModel>("Новости");
-			masterNavigation.AddPage<BookletPageModel>("Правовые памятки");
-			masterNavigation.AddPage<QuestionAnswerPageModel>("Вопросы—Ответы");
-			masterNavigation.AddPage<CompetitionsPageModel>("Конкурсы");
-			masterNavigation.AddPage<BriefcasePageModel>("Успешные кейсы/практики");
-			masterNavigation.AddPage<CalendarPageModel>("Календарь событий");
-			masterNavigation.AddPage<PollsPageModel>("Онлайн голосование");
-			masterNavigation.AddPage<ChatPageModel>("Чат");
-			masterNavigation.AddPage<ContactsPageModel>("Контакты");
-			masterNavigation.AddPage<GrantsPageModel>("Президентские гранты");
-			masterNavigation.AddPage<ApplicationViewModel>("О приложении");
-			
-			NavigationPage.SetHasNavigationBar(masterNavigation.Master, false);
+
+			var main = FreshPageModelResolver.ResolvePageModel<MainPageModel>();
+			var masterNavigation = new FreshNavigationContainer(main);
+
 			return masterNavigation;
 		}
 

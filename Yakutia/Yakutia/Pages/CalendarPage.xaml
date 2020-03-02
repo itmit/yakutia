@@ -42,7 +42,7 @@
                     OuterBorderWidth="0"
                     IsClippedToBounds="True"
                     SelectedFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
-                    SelectedDate="{Binding ShowEventsCommand}"/>
+                    SelectedDate="{Binding SelectedDate}"/>
 
 
                 <Grid HorizontalOptions="Center" x:Name="Grid">

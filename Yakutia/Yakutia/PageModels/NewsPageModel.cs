@@ -23,6 +23,7 @@ namespace Yakutia.PageModels
 					   .SingleOrDefault();
 			RefreshCommand.Execute(null);
 		}
+
 		public ICommand RefreshCommand =>
 			new FreshAwaitCommand((obj, tcs) =>
 			{
@@ -31,6 +32,7 @@ namespace Yakutia.PageModels
 				IsRefreshing = false;
 				tcs.SetResult(true);
 			});
+
 		public bool IsRefreshing
 		{
 			get;

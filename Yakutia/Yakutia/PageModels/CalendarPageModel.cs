@@ -17,6 +17,7 @@ namespace Yakutia.PageModels
 		private User _user;
 		private Event _selectedEvent;
 		private DateTime _selectedDate;
+		private DateTime? _selectedDate1;
 
 		public CalendarPageModel()
 		{
@@ -29,6 +30,19 @@ namespace Yakutia.PageModels
 			get;
 			private set;
 		} = new ObservableCollection<Event>();
+
+		public DateTime? SelectedDate
+		{
+			get => _selectedDate1;
+			set  
+			{
+				_selectedDate1 = value;
+				if (value != null)
+				{
+					ShowEventsCommand.Execute(value.Value);
+				}
+			}
+		}
 
 		public ICommand ShowEventsCommand
 			=> new FreshAwaitCommand(async (obj, tcs) =>
