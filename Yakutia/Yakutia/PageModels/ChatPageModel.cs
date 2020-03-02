@@ -52,8 +52,12 @@ namespace Yakutia.PageModels
 		{
 			if (string.IsNullOrEmpty(TextToSend))
 			{
+				VisibleMessedgesList = false;
+				VisibleText = true;
 				return;
 			}
+			VisibleText = false;
+			VisibleMessedgesList = true;
 			bool res = false;
 			var newMessage = new Message
 			{
@@ -84,6 +88,18 @@ namespace Yakutia.PageModels
 			get;
 			set;
 		}
+
+		public bool VisibleMessedgesList
+		{
+			get;
+			set;
+		} = false;
+
+		public bool VisibleText
+		{
+			get;
+			set;
+		} = true;
 
 		public async void LoadMessages()
 		{

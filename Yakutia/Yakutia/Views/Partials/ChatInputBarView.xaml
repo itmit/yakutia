@@ -24,7 +24,7 @@
                                           IsExpandable="true"
                                           HorizontalOptions="FillAndExpand" 
                                           PlaceholderColor="Black"
-                                          Placeholder="Сообщение"
+                                          Placeholder="Ваш вопрос:"
                                           Grid.Row="0" 
                                           Grid.Column="0"/>
             <Image Grid.Row="0"

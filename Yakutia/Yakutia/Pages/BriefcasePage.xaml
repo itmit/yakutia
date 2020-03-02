@@ -8,7 +8,7 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.BriefcasePage">
     <NavigationPage.TitleView>
-        <Label Text="Успешные кейсы/практики" MaxLines="1" LineBreakMode="TailTruncation" Style="{StaticResource TitleLabel}"/>
+        <Label Text="Успешные кейсы/практики" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>
