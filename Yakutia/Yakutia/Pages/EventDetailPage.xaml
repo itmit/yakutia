@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.EventDetailPage"
              Visual="Material">
@@ -14,8 +15,32 @@
                 <Label Text="{Binding Event.Place}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
                 <Label Text="{Binding Event.DateStart, StringFormat='{0:dd.MM.yyyy hh:mm:ss}'}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
                 <BoxView BackgroundColor="Black" HeightRequest="1"/>
-                <Entry Placeholder="Наименование организации" PlaceholderColor="Black" TextColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
-                <Entry Placeholder="Контактный телефон" PlaceholderColor="Black" TextColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                <Entry Placeholder="Наименование организации" PlaceholderColor="Black" TextColor="Black">
+                    <Entry.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="White"/>
+                        </OnPlatform>
+                    </Entry.BackgroundColor>
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="system:String">
+                            <On Platform="iOS" Value="NotoSans-Regular"/>
+                            <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </Entry>
+                <Entry Placeholder="Контактный телефон" PlaceholderColor="Black" TextColor="Black">
+                    <Entry.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color">
+                            <On Platform="iOS" Value="White"/>
+                        </OnPlatform>
+                    </Entry.BackgroundColor>
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="system:String">
+                            <On Platform="iOS" Value="NotoSans-Regular"/>
+                            <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </Entry>
                 <Button Text="Зарегистрироваться на мероприятие" Command="{Binding RegisterForEventCommand}"/>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <WebView VerticalOptions="FillAndExpand"

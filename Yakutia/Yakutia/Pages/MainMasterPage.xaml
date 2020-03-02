@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.MainMasterPage"
              Title="Master">
@@ -10,7 +11,7 @@
         <ListView x:Name="ListView" ItemsSource="{Binding Pages}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
                         <StackLayout>
                             <Label Text="{Binding .}" FontSize="Medium" TextColor="Black" Margin="10,18"/>
 

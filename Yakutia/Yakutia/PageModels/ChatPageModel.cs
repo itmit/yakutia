@@ -56,8 +56,6 @@ namespace Yakutia.PageModels
 				VisibleText = true;
 				return;
 			}
-			VisibleText = false;
-			VisibleMessedgesList = true;
 			bool res = false;
 			var newMessage = new Message
 			{
@@ -76,6 +74,9 @@ namespace Yakutia.PageModels
 
 			if (res)
 			{
+
+				VisibleText = false;
+				VisibleMessedgesList = true;
 				TextToSend = string.Empty;
 				Messages.Insert(0, newMessage);
 			}

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.AuthorizationPage"
              NavigationPage.HasNavigationBar="False"
@@ -10,11 +11,35 @@
     <ContentPage.Content>
         <!--Страница авторизации-->
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
-            <Entry Text="{Binding Email}"  Placeholder="Введите E-mail" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
+            <Entry Text="{Binding Email}" Placeholder="Введите E-mail" TextColor="Black" PlaceholderColor="Black">
+                <Entry.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="iOS" Value="White"/>
+                    </OnPlatform>
+                </Entry.BackgroundColor>
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="system:String">
+                        <On Platform="iOS" Value="NotoSans-Regular"/>
+                        <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                    </OnPlatform>
+                </Entry.FontFamily>
+            </Entry>
             <Label Text="{Binding Errors.Email, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Email, Converter={StaticResource NullToBoolConverter}}"/>
-            <Entry Text="{Binding Password}"  Placeholder="Введите пароль" IsPassword="True" TextColor="Black" PlaceholderColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
+            <Entry Text="{Binding Password}" Placeholder="Введите пароль" IsPassword="True" TextColor="Black" PlaceholderColor="Black">
+                <Entry.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="iOS" Value="White"/>
+                    </OnPlatform>
+                </Entry.BackgroundColor>
+                <Entry.FontFamily>
+                    <OnPlatform x:TypeArguments="system:String">
+                        <On Platform="iOS" Value="NotoSans-Regular"/>
+                        <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                    </OnPlatform>
+                </Entry.FontFamily>
+            </Entry>
             <Label Text="{Binding Errors.Password, Converter={StaticResource ListToStringConverter}}" 
                    IsEnabled="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"
                    IsVisible="{Binding Errors.Password, Converter={StaticResource NullToBoolConverter}}"/>
