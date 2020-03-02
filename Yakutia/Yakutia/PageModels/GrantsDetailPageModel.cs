@@ -2,7 +2,7 @@
 
 namespace Yakutia.PageModels
 {
-	public class ApplicationViewModel : FreshBasePageModel
+	public class GrantsDetailPageModel : FreshBasePageModel
 	{
 		
 	}

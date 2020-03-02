@@ -31,6 +31,7 @@
                  ItemTemplate="{StaticResource MessageTemplateSelector}" 
                  ItemsSource="{Binding Messages}" 
                  Margin="0"
+                 IsVisible="{Binding VisibleMessedgesList}"
                  Rotation="180"
                  ItemTapped="OnListTapped"
                  FlowDirection="RightToLeft"
@@ -40,6 +41,12 @@
                  ItemAppearingCommand="{Binding MessageAppearingCommand}"
                  ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
             </controls:ExtendedListView>
+            <Label Grid.Row="0" Text="Здесь вы можете задать любой интересующий вас вопрос, наши специалисты обязательно ответят вам. Спасибо, что вы пользуетесь мобильным приложением&#10;«НКО Якутии»."
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   IsVisible="{Binding VisibleText}"
+                   HorizontalTextAlignment="Center"/>
             <BoxView HorizontalOptions="FillAndExpand"
                  HeightRequest="1"
                  BackgroundColor="Gray"

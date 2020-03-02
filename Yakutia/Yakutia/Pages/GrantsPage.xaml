@@ -12,9 +12,24 @@
     <ContentPage.Content>
         <!--Страница президентские гранты-->
         <StackLayout Spacing="10" Margin="20">
-            <Label Text="О конкурсе" TextColor="Black"/>
             <Image Source="pic_fpg_1920w.png" Aspect="AspectFill" HorizontalOptions="Center" Margin="0,15" WidthRequest="200"/>
-            <WebView Source="{Binding Html}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            <Label Text="О конкурсе:" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold"/>
+            <WebView HeightRequest="400" Source="{Binding Html}"/>
+            <Label Text="• Для победителей" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="• Для участников" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="• Список победителей с РС (Я)" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

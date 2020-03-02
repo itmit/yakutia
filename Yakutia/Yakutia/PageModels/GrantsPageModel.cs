@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using FreshMvvm;
 using Xamarin.Forms;
 using Yakutia.Models;
@@ -23,6 +24,12 @@ namespace Yakutia.PageModels
 			};
 
 		}
+
+		public ICommand OpenGrantsDetailCommand => new FreshAwaitCommand((obj, tcs) =>
+		{
+			CoreMethods.PushPageModel<GrantsDetailPageModel>();
+			tcs.SetResult(true);
+		});
 
 		public HtmlWebViewSource Html
 		{

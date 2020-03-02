@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.DocumentsPage">
     <NavigationPage.TitleView>
-        <Label Text="{Binding Title}" Style="{StaticResource TitleLabel}"/>
+        <Label Text="{Binding Title}" MaxLines="2" LineBreakMode="TailTruncation" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
 
     <ContentPage.Content>

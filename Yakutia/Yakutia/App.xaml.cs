@@ -66,7 +66,7 @@ namespace Yakutia
 			masterNavigation.AddPage<ChatPageModel>("Чат");
 			masterNavigation.AddPage<ContactsPageModel>("Контакты");
 			masterNavigation.AddPage<GrantsPageModel>("Президентские гранты");
-			masterNavigation.AddPage<ApplicationViewModel>("О приложении");
+			masterNavigation.AddPage<ApplicationPageModel>("О приложении");
 			
 			NavigationPage.SetHasNavigationBar(masterNavigation.Master, false);
 			return masterNavigation;

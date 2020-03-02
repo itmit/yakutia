@@ -20,7 +20,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
+	<string>8.1</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.itmit.nko</string>
 	<key>CFBundleVersion</key>
@@ -31,8 +31,6 @@
 	<string>Yakutia</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
-	<key>CFBundleDisplayName</key>
-	<string>Помощник НКО</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
@@ -42,5 +40,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>CFBundleDisplayName</key>
+	<string>НКО Якутии</string>
 </dict>
 </plist>

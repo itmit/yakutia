@@ -19,8 +19,6 @@ namespace Yakutia.Droid
         {
             base.OnCreate(savedInstanceState);
 			StartActivity(typeof(MainActivity));
-
-
 		}
     }
 }
