@@ -25,7 +25,7 @@ namespace Yakutia.PageModels
 			var service = new EventsService(_user.Token);
 			try
 			{
-				result = await service.Register(Event);
+				result = await service.Register(Event, OrganizationName, PhoneNumber);
 			}
 			catch (Exception e)
 			{
@@ -69,7 +69,27 @@ namespace Yakutia.PageModels
 				{
 					Html = "<html><body>" + @event.Body + "</body></html>"
 				};
+
+				CanRegister = @event.DateStart > DateTime.Now;
 			}
+		}
+
+		public string OrganizationName
+		{
+			get;
+			set;
+		}
+
+		public string PhoneNumber
+		{
+			get;
+			set;
+		}
+		
+		public bool CanRegister
+		{
+			get;
+			set;
 		}
 
 		public HtmlWebViewSource HtmlSource

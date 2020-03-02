@@ -31,7 +31,7 @@
                  ItemTemplate="{StaticResource MessageTemplateSelector}" 
                  ItemsSource="{Binding Messages}" 
                  Margin="0"
-                 IsVisible="{Binding VisibleMessedgesList}"
+                 IsVisible="{Binding VisibleMessagesList}"
                  Rotation="180"
                  ItemTapped="OnListTapped"
                  FlowDirection="RightToLeft"

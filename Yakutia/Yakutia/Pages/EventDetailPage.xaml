@@ -3,20 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:behaviors="clr-namespace:Yakutia.Behaviors;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.EventDetailPage"
+             Title="{Binding Event.Head}"
              Visual="Material">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="20">
-                <Label Text="{Binding Event.Head}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
                 <Label Text="{Binding Event.Place}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
                 <Label Text="{Binding Event.DateStart, StringFormat='{0:dd.MM.yyyy hh:mm:ss}'}" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold" TextColor="Black"/>
                 <BoxView BackgroundColor="Black" HeightRequest="1"/>
-                <Entry Placeholder="Наименование организации" PlaceholderColor="Black" TextColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
-                <Entry Placeholder="Контактный телефон" PlaceholderColor="Black" TextColor="Black" FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
-                <Button Text="Зарегистрироваться на мероприятие" Command="{Binding RegisterForEventCommand}"/>
+                <Entry Placeholder="Наименование организации"
+                       Text="{Binding OrganizationName}"
+                       PlaceholderColor="Black"
+                       TextColor="Black"
+                       IsEnabled="{Binding CanRegister}"
+                       IsVisible="{Binding CanRegister}"
+                       FontFamily="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                <Entry Placeholder="Контактный телефон"
+                       Text="{Binding PhoneNumber}"
+                       IsEnabled="{Binding CanRegister}"
+                       IsVisible="{Binding CanRegister}"
+                       PlaceholderColor="Black"
+                       TextColor="Black"
+                       FontFamily="NotoSans-Regular.ttf#NotoSans-Regular">
+                    <Entry.Behaviors>
+                        <behaviors:MaskedBehavior Mask="+7 (XXX) XXX-XX-XX"/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Button Text="Зарегистрироваться на мероприятие"
+                        IsEnabled="{Binding CanRegister}"
+                        IsVisible="{Binding CanRegister}"
+                        Command="{Binding RegisterForEventCommand}"/>
                 <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <WebView VerticalOptions="FillAndExpand"
                              MinimumHeightRequest="5"

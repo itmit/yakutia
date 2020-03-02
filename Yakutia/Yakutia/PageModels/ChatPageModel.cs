@@ -52,12 +52,12 @@ namespace Yakutia.PageModels
 		{
 			if (string.IsNullOrEmpty(TextToSend))
 			{
-				VisibleMessedgesList = false;
+				VisibleMessagesList = false;
 				VisibleText = true;
 				return;
 			}
 			VisibleText = false;
-			VisibleMessedgesList = true;
+			VisibleMessagesList = true;
 			bool res = false;
 			var newMessage = new Message
 			{
@@ -89,7 +89,7 @@ namespace Yakutia.PageModels
 			set;
 		}
 
-		public bool VisibleMessedgesList
+		public bool VisibleMessagesList
 		{
 			get;
 			set;
@@ -109,6 +109,8 @@ namespace Yakutia.PageModels
 				var mess = await service.GetAll();
 				mess.Reverse();
 				Messages = new ObservableCollection<Message>(mess);
+				VisibleMessagesList = Messages != null && Messages.Count > 0;
+				VisibleText = !VisibleMessagesList;
 			}
 			catch (Exception e)
 			{

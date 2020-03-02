@@ -61,7 +61,7 @@ namespace Yakutia.Services
 			}
 		}
 
-		public async Task<bool> Register(Event @event)
+		public async Task<bool> Register(Event @event, string organization, string phone)
 		{
 			using (var client = new HttpClient())
 			{
@@ -70,7 +70,15 @@ namespace Yakutia.Services
 
 				var response = await client.PostAsync(RegisterByDateUri, new FormUrlEncodedContent(new Dictionary<string, string>
 				{
-					{ "event", @event.Uuid.ToString() }
+					{
+						"event", @event.Uuid.ToString()
+					},
+					{
+						"phone", phone
+					},
+					{
+						"organization", organization
+					}
 				}));
 				var resp = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(resp);
