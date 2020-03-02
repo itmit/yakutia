@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.GrantsPage">
     <NavigationPage.TitleView>
@@ -17,17 +18,29 @@
             <WebView HeightRequest="400" Source="{Binding Html}"/>
             <Label Text="• Для победителей" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}"/>
+                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}">
+                        <TapGestureRecognizer.CommandParameter>
+                            <system:Int32>1</system:Int32>
+                        </TapGestureRecognizer.CommandParameter>
+                    </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
             <Label Text="• Для участников" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}"/>
+                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}">
+                        <TapGestureRecognizer.CommandParameter>
+                            <system:Int32>2</system:Int32>
+                        </TapGestureRecognizer.CommandParameter>
+                    </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
             <Label Text="• Список победителей с РС (Я)" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}"/>
+                    <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}" >
+                        <TapGestureRecognizer.CommandParameter>
+                            <system:Int32>3</system:Int32>
+                        </TapGestureRecognizer.CommandParameter>
+                    </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>

@@ -27,7 +27,10 @@ namespace Yakutia.PageModels
 
 		public ICommand OpenGrantsDetailCommand => new FreshAwaitCommand((obj, tcs) =>
 		{
-			CoreMethods.PushPageModel<GrantsDetailPageModel>();
+			if (obj is int number)
+			{
+				CoreMethods.PushPageModel<GrantsDetailPageModel>(number);
+			}
 			tcs.SetResult(true);
 		});
 

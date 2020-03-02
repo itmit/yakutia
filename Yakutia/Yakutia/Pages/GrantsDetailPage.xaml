@@ -8,9 +8,7 @@
     <!--Детальная страница для президентских грантов-->
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <WebView VerticalOptions="FillAndExpand" Source="{Binding Html}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
