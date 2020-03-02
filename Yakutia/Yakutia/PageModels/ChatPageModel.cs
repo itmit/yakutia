@@ -57,7 +57,7 @@ namespace Yakutia.PageModels
 				return;
 			}
 			VisibleText = false;
-			VisibleMessagesList = true;
+			VisibleMessedgesList = true;
 			bool res = false;
 			var newMessage = new Message
 			{

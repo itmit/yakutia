@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.BriefcasePage">
     <NavigationPage.TitleView>
@@ -31,7 +32,7 @@
                 </ListView.BackgroundColor>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <views:NewsViewCell/>
+                        <views:NewsViewCell ios:Cell.DefaultBackgroundColor="White"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -42,5 +42,15 @@
 	</dict>
 	<key>CFBundleDisplayName</key>
 	<string>НКО Якутии</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera usage description</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo usage description</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location usage description</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location usage description</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Calendar usage description</string>
 </dict>
 </plist>

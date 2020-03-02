@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              xmlns:calendar="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.CalendarPage">
     <NavigationPage.TitleView>
@@ -59,7 +60,7 @@
                     </ListView.BackgroundColor>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <views:EventViewCell/>
+                            <views:EventViewCell ios:Cell.DefaultBackgroundColor="White"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

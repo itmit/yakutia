@@ -20,23 +20,5 @@
                 </BindableLayout.ItemTemplate>
             </StackLayout>
         </ScrollView>
-
-        <!--<ListView HasUnevenRows="True"
-                  VerticalScrollBarVisibility="Never"
-                  Margin="5,5"
-                  ItemsSource="{Binding Faqs}"
-                  SeparatorVisibility="None"
-                  SelectionMode="None">
-            <ListView.BackgroundColor>
-                <OnPlatform x:TypeArguments="Color">
-                    <On Platform="iOS" Value="White"></On>
-                </OnPlatform>
-            </ListView.BackgroundColor>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <views:QuestionViewCell/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
     </ContentPage.Content>
 </ContentPage>
