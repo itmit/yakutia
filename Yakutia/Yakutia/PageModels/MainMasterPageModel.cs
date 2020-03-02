@@ -85,7 +85,7 @@ namespace Yakutia.PageModels
 				},
 				new MainPageMasterMenuItem
 				{
-					TargetType = typeof(ApplicationViewModel),
+					TargetType = typeof(ApplicationPageModel),
 					Title = "О приложении"
 				}
 			};
