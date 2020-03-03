@@ -14,7 +14,7 @@ namespace Yakutia.Services
 {
 	public class AuthService
 	{
-		private Mapper _mapper;
+		private readonly Mapper _mapper;
 
 		private const string SignInUri = "http://yakutia.itmit-studio.ru/api/login";
 		private const string SignUpUri = "http://yakutia.itmit-studio.ru/api/register";
@@ -63,6 +63,7 @@ namespace Yakutia.Services
 				return null;
 			}
 		}
+		
 		public async Task<User> Register(RegisterDto registrationDto)
 		{
 			using (var client = new HttpClient())
@@ -94,6 +95,51 @@ namespace Yakutia.Services
 				var jsonError = JsonConvert.DeserializeObject<ErrorsDto<RegisterErrorDto>>(jsonString);
 				ServerRegistrationError = jsonError;
 				return null;
+			}
+		}
+
+		private const string SendRecoveryCodeUri = "http://yakutia.itmit-studio.ru/api/sendCode";
+
+		public async Task<bool> SendRecoveryCode(string email)
+		{
+			using (var client = new HttpClient())
+			{
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+				var response = await client.PostAsync(SendRecoveryCodeUri, new FormUrlEncodedContent(new Dictionary<string, string>
+				{
+					{"email", email }
+				}));
+
+				return response.IsSuccessStatusCode;
+			}
+		}
+
+		private const string RecoveryUri = "http://yakutia.itmit-studio.ru/api/resetPassword";
+
+		public async Task<bool> Recovery(string email, string code, string password, string passwordConfirmation)
+		{
+			using (var client = new HttpClient())
+			{
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+				var response = await client.PostAsync(RecoveryUri, new FormUrlEncodedContent(new Dictionary<string, string>
+				{
+					{"email", email },
+					{"code", code },
+					{"password", password },
+					{"password_confirmation", passwordConfirmation },
+				}));
+
+				var jsonString = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(jsonString);
+				if (string.IsNullOrEmpty(jsonString))
+				{
+					return false;
+				}
+				var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<object>>(jsonString);
+
+				return jsonData.Success;
 			}
 		}
 

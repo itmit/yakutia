@@ -14,7 +14,7 @@
     <ContentPage.Content>
         <!--Страница восстановления пароля-->
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
-            <Entry Placeholder="Введите полученный код" IsPassword="True" PlaceholderColor="Black" TextColor="Black">
+            <Entry Text="{Binding Code}" Placeholder="Введите полученный код" IsPassword="True" PlaceholderColor="Black" TextColor="Black">
                 <Entry.BackgroundColor>
                     <OnPlatform x:TypeArguments="Color">
                         <On Platform="iOS" Value="White"/>
@@ -27,7 +27,7 @@
                     </OnPlatform>
                 </Entry.FontFamily>
             </Entry>
-            <Entry Placeholder="Новый пароль" IsPassword="True" PlaceholderColor="Black" TextColor="Black">
+            <Entry Text="{Binding Password}" Placeholder="Новый пароль" IsPassword="True" PlaceholderColor="Black" TextColor="Black">
                 <Entry.BackgroundColor>
                     <OnPlatform x:TypeArguments="Color">
                         <On Platform="iOS" Value="White"/>
@@ -40,7 +40,7 @@
                     </OnPlatform>
                 </Entry.FontFamily>
             </Entry>
-            <Entry Placeholder="Повторите пароль" IsPassword="True" PlaceholderColor="Black" TextColor="Black">
+            <Entry Text="{Binding PasswordConfirm}" Placeholder="Повторите пароль" IsPassword="True" PlaceholderColor="Black" TextColor="Black">
                 <Entry.BackgroundColor>
                     <OnPlatform x:TypeArguments="Color">
                         <On Platform="iOS" Value="White"/>
@@ -53,10 +53,10 @@
                     </OnPlatform>
                 </Entry.FontFamily>
             </Entry>
-            <Button Text="Сменить пароль" TextColor="White" Margin="0,0,0,15"/>
+            <Button Text="Сменить пароль" TextColor="White" Margin="0,0,0,15" Command="{Binding RecoverCommand}"/>
             <Label Text="Я не получил код!" HorizontalTextAlignment="Center" TextColor="Black">
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer/>
+                    <TapGestureRecognizer Command="{Binding SendCode}"/>
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
