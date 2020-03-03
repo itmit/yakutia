@@ -4,15 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:Yakutia.Converters;assembly=Yakutia"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="Yakutia.App">
     <Application.Resources>
 
         <converters:ListToStringConverter x:Key="ListToStringConverter" />
         <converters:NullToBoolConverter x:Key="NullToBoolConverter" />
-        <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="#2196F3"/>
-        </Style>
         <Style x:Key="BackButton" TargetType="Button">
             <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,.1,80,80"/>
             <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional"/>

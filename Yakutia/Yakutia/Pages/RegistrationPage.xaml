@@ -14,7 +14,7 @@
     <ContentPage.Content>
         <!--Страница регистрации-->
         <ScrollView Margin="0,0,0,5">
-        <StackLayout Margin="0,20" HorizontalOptions="Center" Spacing="20" WidthRequest="320">
+        <StackLayout Margin="20,20" Spacing="20">
                 <Entry Text="{Binding Name}" Placeholder="Имя" TextColor="Black" PlaceholderColor="Black">
                     <Entry.BackgroundColor>
                         <OnPlatform x:TypeArguments="Color">
