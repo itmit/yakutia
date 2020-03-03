@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows.Input;
 using FreshMvvm;
 using Xamarin.Forms;
 using Yakutia.Models;
-using Yakutia.Page;
 using Yakutia.Repositories;
 using Yakutia.Services;
 

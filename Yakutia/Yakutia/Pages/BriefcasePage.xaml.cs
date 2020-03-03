@@ -1,8 +1,5 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat;
-using Yakutia.Page;
-using Yakutia.PageModels;
 
 namespace Yakutia.Pages
 {

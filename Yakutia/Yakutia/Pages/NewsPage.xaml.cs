@@ -1,8 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Yakutia.Page;
-using Yakutia.PageModels;
 
 namespace Yakutia.Pages
 {

@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
 using System.Windows.Input;
-using AutoMapper.Mappers;
 using FreshMvvm;
 using Yakutia.Models;
 using Yakutia.Repositories;
@@ -57,7 +56,7 @@ namespace Yakutia.PageModels
 				return;
 			}
 			VisibleText = false;
-			VisibleMessedgesList = true;
+			VisibleMessagesList = true;
 			bool res = false;
 			var newMessage = new Message
 			{

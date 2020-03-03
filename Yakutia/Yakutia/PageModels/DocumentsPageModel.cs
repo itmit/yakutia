@@ -13,6 +13,7 @@ using Plugin.Permissions.Abstractions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Yakutia.Models;
+using PermissionStatus = Plugin.Permissions.Abstractions.PermissionStatus;
 
 namespace Yakutia.PageModels
 {
