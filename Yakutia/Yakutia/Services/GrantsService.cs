@@ -46,18 +46,28 @@ namespace Yakutia.Services
 
 				var response = await client.GetAsync(GetAboutUri);
 
-				var html = await response.Content.ReadAsStringAsync();
-				Debug.WriteLine(html);
+				var jsonString = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(jsonString);
 
 				if (response.IsSuccessStatusCode)
 				{
-					return html;
+					var jsonData = JsonConvert.DeserializeObject<JsonResponseDto<App>>(jsonString);
+					return jsonData.Data.Text;
 				}
 
-				return null;
+				return string.Empty;
 			}
 		}
-		
+
+		private class App
+		{
+			public string Text
+			{
+				get;
+				set;
+			}
+		}
+
 		private const string GetGrantHtmlUri = "http://yakutia.itmit-studio.ru/api/moregrants";
 		private const string StorageUri = "http://yakutia.itmit-studio.ru";
 
