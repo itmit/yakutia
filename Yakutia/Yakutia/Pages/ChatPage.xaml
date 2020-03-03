@@ -27,7 +27,7 @@
                 <RowDefinition Height="1" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <controls:ExtendedListView Grid.Row="0" 
+            <controls:ExtendedListView Grid.Row="0" BackgroundColor="Transparent"
                  ItemTemplate="{StaticResource MessageTemplateSelector}" 
                  ItemsSource="{Binding Messages}" 
                  Margin="0"

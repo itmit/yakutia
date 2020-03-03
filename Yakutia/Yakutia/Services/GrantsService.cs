@@ -13,6 +13,7 @@ namespace Yakutia.Services
 	{
 		private readonly Token _token;
 		private const string GetHtmlUri = "http://yakutia.itmit-studio.ru/api/grants/index";
+		private const string GetAboutUri = "http://yakutia.itmit-studio.ru/api/about";
 
 		public GrantsService(Token token) => _token = token;
 
@@ -24,6 +25,26 @@ namespace Yakutia.Services
 				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
 
 				var response = await client.GetAsync(GetHtmlUri);
+
+				var html = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(html);
+
+				if (response.IsSuccessStatusCode)
+				{
+					return html;
+				}
+
+				return null;
+			}
+		}
+		public async Task<string> GetAbout()
+		{
+			using (var client = new HttpClient())
+			{
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
+
+				var response = await client.GetAsync(GetAboutUri);
 
 				var html = await response.Content.ReadAsStringAsync();
 				Debug.WriteLine(html);

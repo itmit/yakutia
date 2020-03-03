@@ -153,9 +153,12 @@
     <BundleResource Include="Resources\goluboy.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\grant.png" />
+    <BundleResource Include="Resources\sery.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\sery.png" />
+    <BundleResource Include="Resources\pic_fpg_1920w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_chevron_left.png" />
   </ItemGroup>
 </Project>

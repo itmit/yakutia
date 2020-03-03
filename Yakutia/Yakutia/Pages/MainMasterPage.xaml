@@ -6,12 +6,17 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.MainMasterPage"
-             Title="Master">
+             Title="Menu">
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color">
+            <On Platform="iOS" Value="#BBDEFB"/>
+        </OnPlatform>
+    </ContentPage.BackgroundColor>
     <StackLayout>
         <ListView x:Name="ListView" ItemsSource="{Binding Pages}" HasUnevenRows="True" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
+                    <ViewCell ios:Cell.DefaultBackgroundColor="#BBDEFB">
                         <StackLayout>
                             <Label Text="{Binding .}" FontSize="Medium" TextColor="Black" Margin="10,18"/>
 
@@ -20,6 +25,11 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <On Platform="iOS" Value="#BBDEFB"/>
+                </OnPlatform>
+            </ListView.BackgroundColor>
         </ListView>
 
         <Button Text="Выйти" Visual="Material" Margin="10" Command="{Binding ExitCommand}"/>

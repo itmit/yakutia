@@ -25,8 +25,6 @@
 	<string>com.itmit.nko</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>Yakutia</string>
 	<key>XSAppIconAssets</key>
@@ -52,5 +50,21 @@
 	<string>Location usage description</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Calendar usage description</string>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSans-Regular</string>
+		<string>NotoSans-Bold</string>
+	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

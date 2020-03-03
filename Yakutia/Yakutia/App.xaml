@@ -10,7 +10,10 @@
     <Application.Resources>
 
         <converters:ListToStringConverter x:Key="ListToStringConverter" />
-        <converters:NullToBoolConverter x:Key="NullToBoolConverter" />
+        <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#1976D2"/>
+        </Style>
         <Style x:Key="BackButton" TargetType="Button">
             <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,.1,80,80"/>
             <Setter Property="AbsoluteLayout.LayoutFlags" Value="PositionProportional"/>
@@ -24,6 +27,7 @@
             <Setter Property="FontFamily" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
             <Setter Property="FontSize" Value="Large"/>
             <Setter Property="TextColor" Value="White"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
         </Style>
         <!--Стиль для кнопок-->
         <Style TargetType="Button">

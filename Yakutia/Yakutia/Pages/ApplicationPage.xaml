@@ -12,7 +12,7 @@
     <ContentPage.Content>
         <!--Страница о приложении-->
         <StackLayout>
-            
+            <WebView VerticalOptions="FillAndExpand" Source="{Binding Html}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
