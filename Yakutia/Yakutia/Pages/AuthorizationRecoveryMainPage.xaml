@@ -13,7 +13,7 @@
 
     <ContentPage.Content>
         <StackLayout Margin="20,0" VerticalOptions="Center" Spacing="20">
-            <Entry Placeholder="E-mail" PlaceholderColor="Black" TextColor="Black">
+            <Entry Text="{Binding Email}"  Placeholder="E-mail" PlaceholderColor="Black" TextColor="Black">
                 <Entry.BackgroundColor>
                     <OnPlatform x:TypeArguments="Color">
                         <On Platform="iOS" Value="White"/>
