@@ -38,6 +38,7 @@ namespace Yakutia.Services
 		}
 		
 		private const string GetGrantHtmlUri = "http://yakutia.itmit-studio.ru/api/moregrants";
+		private const string StorageUri = "http://yakutia.itmit-studio.ru";
 
 		public async Task<string> GetGrant(int i)
 		{
@@ -55,7 +56,8 @@ namespace Yakutia.Services
 				}
 				));
 
-				var html = await response.Content.ReadAsStringAsync();
+				var html = (await response.Content.ReadAsStringAsync()).Replace("<a href=\"", $"<a href=\"{StorageUri}");
+
 				Debug.WriteLine(html);
 
 				if (response.IsSuccessStatusCode)
