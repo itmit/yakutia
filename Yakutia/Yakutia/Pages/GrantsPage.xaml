@@ -14,22 +14,9 @@
         <!--Страница президентские гранты-->
         <StackLayout Spacing="10" Margin="20">
             <Image Source="pic_fpg_1920w.png" Aspect="AspectFill" HorizontalOptions="Center" Margin="0,15" WidthRequest="200"/>
-            <Label Text="О конкурсе:" TextColor="Black">
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="system:String">
-                        <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
-                        <On Platform="iOS" Value="NotoSans-Bold"/>
-                    </OnPlatform>
-                </Label.FontFamily>
-            </Label>
+            <Label Text="О конкурсе:" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold"/>
             <WebView HeightRequest="400" Source="{Binding Html}"/>
-            <Label Text="• Для победителей" TextColor="Black">
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="system:String">
-                        <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
-                        <On Platform="iOS" Value="NotoSans-Bold"/>
-                    </OnPlatform>
-                </Label.FontFamily>
+            <Label Text="• Для победителей" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}">
                         <TapGestureRecognizer.CommandParameter>
@@ -38,13 +25,7 @@
                     </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="• Для участников" TextColor="Black">
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="system:String">
-                        <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
-                        <On Platform="iOS" Value="NotoSans-Bold"/>
-                    </OnPlatform>
-                </Label.FontFamily>
+            <Label Text="• Для участников" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}">
                         <TapGestureRecognizer.CommandParameter>
@@ -53,13 +34,7 @@
                     </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="• Список победителей с РС (Я)" TextColor="Black">
-                <Label.FontFamily>
-                    <OnPlatform x:TypeArguments="system:String">
-                        <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
-                        <On Platform="iOS" Value="NotoSans-Bold"/>
-                    </OnPlatform>
-                </Label.FontFamily>
+            <Label Text="• Список победителей с РС (Я)" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}" >
                         <TapGestureRecognizer.CommandParameter>

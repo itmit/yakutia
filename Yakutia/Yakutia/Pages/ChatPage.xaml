@@ -8,7 +8,7 @@
              xmlns:partials="clr-namespace:Yakutia.Views.Partials;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.ChatPage"
-             BackgroundColor="White">
+             BackgroundColor="#E3F2FD">
     <NavigationPage.TitleView>
         <Label Text="Чат" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
@@ -20,41 +20,39 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <!--Страница чат-->
-        <ScrollView>
-            <Grid RowSpacing="0" 
-                  ColumnSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="1" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <controls:ExtendedListView Grid.Row="0" BackgroundColor="Transparent"
-                                           ItemTemplate="{StaticResource MessageTemplateSelector}" 
-                                           ItemsSource="{Binding Messages}" 
-                                           Margin="0"
-                                           IsVisible="{Binding VisibleMessagesList}"
-                                           Rotation="180"
-                                           ItemTapped="OnListTapped"
-                                           FlowDirection="RightToLeft"
-                                           HasUnevenRows="True"
-                                           VerticalOptions="FillAndExpand" 
-                                           SeparatorColor="Transparent"
-                                           ItemAppearingCommand="{Binding MessageAppearingCommand}"
-                                           ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
-                </controls:ExtendedListView>
-                <Label Grid.Row="0" Text="Здесь вы можете задать любой интересующий вас вопрос, наши специалисты обязательно ответят вам. Спасибо, что вы пользуетесь мобильным приложением&#10;«НКО Якутии»."
-                       TextColor="Black"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center"
-                       IsVisible="{Binding VisibleText}"
-                       HorizontalTextAlignment="Center"/>
-                <BoxView HorizontalOptions="FillAndExpand"
-                         HeightRequest="1"
-                         BackgroundColor="Gray"
-                         Grid.Row="1"/>
-                <partials:ChatInputBarView Grid.Row="2" BackgroundColor="White"
-                                           x:Name="ChatInput" Padding="0,0,10,0"/>
-            </Grid>
-        </ScrollView>
+        <Grid RowSpacing="0" 
+           ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <controls:ExtendedListView Grid.Row="0" BackgroundColor="Transparent"
+                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
+                 ItemsSource="{Binding Messages}" 
+                 Margin="0"
+                 IsVisible="{Binding VisibleMessagesList}"
+                 Rotation="180"
+                 ItemTapped="OnListTapped"
+                 FlowDirection="RightToLeft"
+                 HasUnevenRows="True"
+                 VerticalOptions="FillAndExpand" 
+                 SeparatorColor="Transparent"
+                 ItemAppearingCommand="{Binding MessageAppearingCommand}"
+                 ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
+            </controls:ExtendedListView>
+            <Label Grid.Row="0" Text="Здесь вы можете задать любой интересующий вас вопрос, наши специалисты обязательно ответят вам. Спасибо, что вы пользуетесь мобильным приложением&#10;«НКО Якутии»."
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   IsVisible="{Binding VisibleText}"
+                   HorizontalTextAlignment="Center"/>
+            <BoxView HorizontalOptions="FillAndExpand"
+                 HeightRequest="1"
+                 BackgroundColor="Gray"
+                 Grid.Row="1"/>
+            <partials:ChatInputBarView Grid.Row="2" BackgroundColor="White"
+                                   x:Name="ChatInput" Padding="0,0,10,0"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
