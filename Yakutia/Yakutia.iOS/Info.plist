@@ -57,8 +57,8 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NotoSans-Regular.ttf</string>
-		<string>NotoSans-Bold.ttf</string>
+		<string>NotoSans-Regular</string>
+		<string>NotoSans-Bold</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>

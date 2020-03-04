@@ -8,7 +8,7 @@
              xmlns:partials="clr-namespace:Yakutia.Views.Partials;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.ChatPage"
-             BackgroundColor="White">
+             BackgroundColor="#E3F2FD">
     <NavigationPage.TitleView>
         <Label Text="Чат" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
