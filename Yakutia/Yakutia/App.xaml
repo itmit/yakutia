@@ -12,7 +12,7 @@
         <converters:ListToStringConverter x:Key="ListToStringConverter" />
         <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
         <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="#1976D2"/>
+            <Setter Property="BarBackgroundColor" Value="#BBDEFB"/>
         </Style>
         <Style x:Key="BackButton" TargetType="Button">
             <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,.1,80,80"/>
@@ -24,20 +24,21 @@
         </Style>
         <!--Стиль для NavigationPage-->
         <Style x:Key="TitleLabel" TargetType="Label">
-            <Setter Property="FontFamily" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
+            <Setter Property="FontFamily" Value="NotoSans-Bold"/>
             <Setter Property="FontSize" Value="Large"/>
-            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="TextColor" Value="Black"/>
             <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
         </Style>
         <!--Стиль для кнопок-->
         <Style TargetType="Button">
-            <Setter Property="FontFamily" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+            <Setter Property="FontFamily" Value="NotoSans-Regular"/>
             <Setter Property="BackgroundColor" Value="#1976D2"/>
             <Setter Property="TextColor" Value="White"/>
         </Style>
         <!--Стиль для всего текста в приложении-->
         <Style TargetType="Label">
-            <Setter Property="FontFamily" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+            <Setter Property="FontFamily" Value="NotoSans-Regular"/>
             <Setter Property="FontSize" Value="Medium"/>
         </Style>
     </Application.Resources>

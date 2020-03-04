@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.BookletPage">
     <NavigationPage.TitleView>
@@ -19,7 +20,14 @@
             RefreshColor="Blue">
             <ScrollView>
                 <StackLayout Margin="20" Spacing="10">
-                    <Label Text="1. Регистрация НКО" TextColor="Black"/>
+                    <Label Text="1. Регистрация НКО" TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
                     <StackLayout Margin="10,0" Spacing="10">
                         <Label Text="1.1. Создание и регистрация НКО">
                             <Label.GestureRecognizers>
@@ -53,11 +61,24 @@
                         </Label>
                     </StackLayout>
                     <Label Text="2. Включение в реестр ИОПУ" TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="2. Включение в реестр ИОПУ" NumberOfTapsRequired="1"/>
                         </Label.GestureRecognizers>
                     </Label>
-                    <Label Text="3. Отчетность НКО" TextColor="Black"/>
+                    <Label Text="3. Отчетность НКО" TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
                     <StackLayout Margin="10,0" Spacing="10">
                         <Label Text="3.1. Казачьи общества">
                             <Label.GestureRecognizers>
@@ -91,6 +112,12 @@
                         </Label>
                     </StackLayout>
                     <Label Text="4. Обязанности и ответственность НКО" TextColor="Black">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ShowDocumentsCommand}" CommandParameter="4. Обязанности и ответственность НКО"  NumberOfTapsRequired="1"/>
                         </Label.GestureRecognizers>

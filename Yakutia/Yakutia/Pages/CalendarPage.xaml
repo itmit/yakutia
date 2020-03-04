@@ -21,7 +21,7 @@
                     TitleLeftArrowTextColor="#1976D2"
                     TitleRightArrowTextColor="#1976D2"
                     TitleLabelFontSize="18"
-                    TitleLabelFontFamily="NotoSans-Bold.ttf#NotoSans-Bold"
+                    TitleLabelFontFamily="NotoSans-Bold"
                     TitleLabelTextColor="#1976D2"
                     DatesBackgroundColor="#E3F2FD"
                     SelectedBorderWidth="0"
@@ -29,12 +29,12 @@
                     SelectedBackgroundColor="#1976D2"
                     SelectedBorderColor="White"
                     WeekdaysFontSize="16"
-                    WeekdaysFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
+                    WeekdaysFontFamily="NotoSans-Regular"
                     WeekdaysTextColor="#1976D2"
                     DatesFontSize="16"
                     DatesTextColor="Black"
-                    DatesFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
-                    DatesFontFamilyOutsideMonth="NotoSans-Regular.ttf#NotoSans-Regular"
+                    DatesFontFamily="NotoSans-Regular"
+                    DatesFontFamilyOutsideMonth="NotoSans-Regular"
                     BorderWidth="1"
                     BorderColor="#82B1FF"
                     DisabledBorderColor="#1976D2"
@@ -42,7 +42,7 @@
                     StartDay="Monday"
                     OuterBorderWidth="0"
                     IsClippedToBounds="True"
-                    SelectedFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
+                    SelectedFontFamily="NotoSans-Regular"
                     SelectedDate="{Binding SelectedDate}"/>
 
 
