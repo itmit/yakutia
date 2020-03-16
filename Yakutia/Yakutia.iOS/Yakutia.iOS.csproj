@@ -74,34 +74,34 @@
     <BundleResource Include="Resources\NotoSans-Bold.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Contents.json">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon1024.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon120.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon120.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon1201.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon1201.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon180.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon180.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon40.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon40.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon58.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon58.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon60.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon60.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon80.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon80.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIconsNKO.appiconset\Icon87.png">
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon87.png">
       <Visible>false</Visible>
     </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -153,9 +153,12 @@
     <BundleResource Include="Resources\goluboy.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\grant.png" />
+    <BundleResource Include="Resources\sery.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\sery.png" />
+    <BundleResource Include="Resources\pic_fpg_1920w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_chevron_left.png" />
   </ItemGroup>
 </Project>
