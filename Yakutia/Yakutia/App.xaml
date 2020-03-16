@@ -12,7 +12,7 @@
         <converters:ListToStringConverter x:Key="ListToStringConverter" />
         <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
         <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="#1976D2"/>
+            <Setter Property="BarBackgroundColor" Value="#BBDEFB"/>
         </Style>
         <Style x:Key="BackButton" TargetType="Button">
             <Setter Property="AbsoluteLayout.LayoutBounds" Value="0,.1,80,80"/>
