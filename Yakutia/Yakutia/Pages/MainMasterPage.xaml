@@ -7,13 +7,15 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.MainMasterPage"
              Title="Master">
-    <ScrollView>
-        <StackLayout>
-            <ContentPage.BackgroundColor>
+
+    <ContentPage.BackgroundColor>
         <OnPlatform x:TypeArguments="Color">
             <On Platform="iOS" Value="#BBDEFB"/>
         </OnPlatform>
     </ContentPage.BackgroundColor>
+
+    <ScrollView>
+        <StackLayout>
             <StackLayout x:Name="ListView" BindableLayout.ItemsSource="{Binding Pages}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
