@@ -14,10 +14,11 @@ namespace Yakutia.Services
 {
 	public class EventsService
 	{
-		private Mapper _mapper;
-		private Token _token;
+		private readonly Mapper _mapper;
+		private readonly Token _token;
 		private const string GetEventsByDateUri = "http://yakutia.itmit-studio.ru/api/events/getEventsByDate/";
 		private const string RegisterByDateUri = "http://yakutia.itmit-studio.ru/api/events/registerOnEvent";
+
 		public EventsService(Token token)
 		{
 			_token = token;
@@ -89,6 +90,37 @@ namespace Yakutia.Services
 
 				ServerError = JsonConvert.DeserializeObject<ErrorsDto<string>>(resp);
 				return false;
+			}
+		}
+
+		private const string GetEventsDatesUri = "http://yakutia.itmit-studio.ru/api/events/getEventsDates";
+
+		public async Task<List<DateTime>> GetEventsDates()
+		{
+			using (var client = new HttpClient())
+			{
+				client.DefaultRequestHeaders.Authorization = AuthenticationHeaderValue.Parse($"{_token.Type} {_token.Value}");
+				client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+				var response = await client.GetAsync(GetEventsDatesUri);
+
+				var json = await response.Content.ReadAsStringAsync();
+				Debug.WriteLine(json);
+
+				var data = JsonConvert.DeserializeObject<JsonResponseDto<List<EventDateDto>>>(json);
+
+				if (data.Success)
+				{
+					var dates = new List<DateTime>();
+					foreach (var eventDateDto in data.Data)
+					{
+						dates.Add(eventDateDto.DateStart);
+					}
+
+					return dates;
+				}
+
+				return new List<DateTime>();
 			}
 		}
 

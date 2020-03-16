@@ -43,6 +43,7 @@
                     OuterBorderWidth="0"
                     IsClippedToBounds="True"
                     SelectedFontFamily="NotoSans-Regular.ttf#NotoSans-Regular"
+                    SpecialDates="{Binding EventDates}"
                     SelectedDate="{Binding SelectedDate}"/>
 
 

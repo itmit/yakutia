@@ -7,21 +7,30 @@
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.MainMasterPage"
              Title="Master">
-    <StackLayout>
-        <ListView x:Name="ListView" ItemsSource="{Binding Pages}" HasUnevenRows="True" SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell ios:Cell.DefaultBackgroundColor="White">
-                        <StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <StackLayout x:Name="ListView" BindableLayout.ItemsSource="{Binding Pages}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout ios:Cell.DefaultBackgroundColor="White">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                            </StackLayout.GestureRecognizers>
                             <Label Text="{Binding .}" FontSize="Medium" TextColor="Black" Margin="10,18"/>
 
                             <BoxView BackgroundColor="DarkGray" HeightRequest="1"/>
                         </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
 
-        <Button Text="Выйти" Visual="Material" Margin="10" Command="{Binding ExitCommand}"/>
-    </StackLayout>
+            <Label Text="Мы в Instagram" Margin="10" TextColor="Black">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped1"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Button Text="Выйти" Visual="Material" Margin="10" Command="{Binding ExitCommand}"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -98,7 +98,7 @@ namespace Yakutia.PageModels
 		{
 			get;
 			set;
-		} = true;
+		}
 
 		public async void LoadMessages()
 		{

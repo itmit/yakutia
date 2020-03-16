@@ -24,18 +24,14 @@ namespace Yakutia.Pages
 			_mainMasterPage = (MainMasterPage)FreshPageModelResolver.ResolvePageModel<MainMasterPageModel>();
 			Master = _mainMasterPage;
 			Detail = new NavigationPage(FreshPageModelResolver.ResolvePageModel<NewsPageModel>());
-			_mainMasterPage.List.ItemSelected += ListView_ItemSelected;
+
+			_mainMasterPage.SelectedMenuPage += SelectedMenuPage;
 		}
 
-		private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		private void SelectedMenuPage(object sender, EventArgs e)
 		{
-			if (e.SelectedItem is MainPageMasterMenuItem page)
-			{
-				Detail = new NavigationPage(FreshPageModelResolver.ResolvePageModel(page.TargetType, null));
-				IsPresented = false;
-
-				_mainMasterPage.List.SelectedItem = null;
-			}
+			Detail = new NavigationPage(FreshPageModelResolver.ResolvePageModel(_mainMasterPage.SelectedPage.TargetType, null));
+			IsPresented = false;
 		}
 	}
 }

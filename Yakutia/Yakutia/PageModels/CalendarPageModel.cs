@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Input;
 using FreshMvvm;
 using Xamarin.Forms;
+using XamForms.Controls;
 using Yakutia.Models;
 using Yakutia.Repositories;
 using Yakutia.Services;
@@ -12,7 +13,7 @@ namespace Yakutia.PageModels
 {
 	public class CalendarPageModel :FreshBasePageModel
 	{
-		private User _user;
+		private readonly User _user;
 		private Event _selectedEvent;
 		private DateTime _selectedDate;
 		private DateTime? _selectedDate1;
@@ -20,7 +21,30 @@ namespace Yakutia.PageModels
 		public CalendarPageModel()
 		{
 			_user = new UserRepository().GetAll().SingleOrDefault();
-			
+		}
+
+		public override async void Init(object initData)
+		{
+			base.Init(initData);
+
+			var service = new EventsService(_user.Token);
+			var dates = new ObservableCollection<DateTime>(await service.GetEventsDates());
+			var eventDates = new ObservableCollection<SpecialDate>();
+			foreach (var dateTime in dates)
+			{
+				eventDates.Add(new SpecialDate(dateTime)
+				{
+					BackgroundColor = Color.LightCoral
+				});
+			}
+
+			EventDates = eventDates;
+		}
+
+		public ObservableCollection<SpecialDate> EventDates
+		{
+			get;
+			private set;
 		}
 
 		public ObservableCollection<Event> Events
