@@ -7,8 +7,14 @@
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              xmlns:partials="clr-namespace:Yakutia.Views.Partials;assembly=Yakutia"
              mc:Ignorable="d"
-             x:Class="Yakutia.Pages.ChatPage"
-             BackgroundColor="#BBDEFB">
+             x:Class="Yakutia.Pages.ChatPage">
+    <ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color">
+            <On Platform="Android" Value="#BBDEFB"/>
+            <On Platform="iOS" Value="White"/>
+        </OnPlatform>
+    </ContentPage.BackgroundColor>
+
     <NavigationPage.TitleView>
         <Label Text="Чат" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
@@ -23,12 +29,12 @@
         <ScrollView>
             <Grid RowSpacing="0" 
                   ColumnSpacing="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="1" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <controls:ExtendedListView Grid.Row="0" BackgroundColor="Transparent"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <controls:ExtendedListView Grid.Row="0" BackgroundColor="#BBDEFB"
                                            ItemTemplate="{StaticResource MessageTemplateSelector}" 
                                            ItemsSource="{Binding Messages}" 
                                            Margin="0"
@@ -41,20 +47,20 @@
                                            SeparatorColor="Transparent"
                                            ItemAppearingCommand="{Binding MessageAppearingCommand}"
                                            ItemDisappearingCommand="{Binding MessageDisappearingCommand}">
-            </controls:ExtendedListView>
-            <Label Grid.Row="0" Text="Здесь вы можете задать любой интересующий вас вопрос, наши специалисты обязательно ответят вам. Спасибо, что вы пользуетесь мобильным приложением&#10;«НКО Якутии»."
+                </controls:ExtendedListView>
+                <Label Grid.Row="0" Text="Здесь вы можете задать любой интересующий вас вопрос, наши специалисты обязательно ответят вам. Спасибо, что вы пользуетесь мобильным приложением&#10;«НКО Якутии»."
                        TextColor="Black"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        IsVisible="{Binding VisibleText}"
                        HorizontalTextAlignment="Center"/>
-            <BoxView HorizontalOptions="FillAndExpand"
+                <BoxView HorizontalOptions="FillAndExpand"
                          HeightRequest="1"
                          BackgroundColor="Gray"
                          Grid.Row="1"/>
-            <partials:ChatInputBarView Grid.Row="2" BackgroundColor="White"
+                <partials:ChatInputBarView Grid.Row="2" BackgroundColor="White"
                                            x:Name="ChatInput" Padding="0,0,10,0"/>
-        </Grid>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

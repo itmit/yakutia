@@ -23,8 +23,8 @@
                     <Label Text="1. Регистрация НКО" TextColor="Black">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="system:String">
-                                <On Platform="iOS" Value="NotoSans-Regular"/>
-                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
                             </OnPlatform>
                         </Label.FontFamily>
                     </Label>
@@ -63,8 +63,8 @@
                     <Label Text="2. Включение в реестр ИОПУ" TextColor="Black">
                          <Label.FontFamily>
                             <OnPlatform x:TypeArguments="system:String">
-                                <On Platform="iOS" Value="NotoSans-Regular"/>
-                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
                             </OnPlatform>
                         </Label.FontFamily>
                         <Label.GestureRecognizers>
@@ -74,8 +74,8 @@
                     <Label Text="3. Отчетность НКО" TextColor="Black">
                          <Label.FontFamily>
                             <OnPlatform x:TypeArguments="system:String">
-                                <On Platform="iOS" Value="NotoSans-Regular"/>
-                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
                             </OnPlatform>
                         </Label.FontFamily>
                     </Label>
@@ -114,8 +114,8 @@
                     <Label Text="4. Обязанности и ответственность НКО" TextColor="Black">
                          <Label.FontFamily>
                             <OnPlatform x:TypeArguments="system:String">
-                                <On Platform="iOS" Value="NotoSans-Regular"/>
-                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                                <On Platform="iOS" Value="NotoSans-Bold"/>
+                                <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
                             </OnPlatform>
                         </Label.FontFamily>
                         <Label.GestureRecognizers>
