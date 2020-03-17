@@ -24,9 +24,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.itmit.nko</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CFBundleName</key>
-	<string>Yakutia</string>
+	<string>1.0.13</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcons.appiconset</string>
 	<key>UIBackgroundModes</key>
@@ -57,8 +55,8 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>NotoSans-Regular</string>
-		<string>NotoSans-Bold</string>
+		<string>NotoSans-Regular.ttf</string>
+		<string>NotoSans-Bold.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
@@ -66,5 +64,9 @@
 	<string>LaunchScreen</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>CFBundleName</key>
+	<string>НКО Якутии</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.13</string>
 </dict>
 </plist>

@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.MainMasterPage"
-             Title="Master">
+             Title="Меню">
 
     <ContentPage.BackgroundColor>
         <OnPlatform x:TypeArguments="Color">
@@ -16,6 +17,11 @@
 
     <ScrollView>
         <StackLayout>
+            <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,30,0,0"/>
+                </OnPlatform>
+            </StackLayout.Margin>
             <StackLayout x:Name="ListView" BindableLayout.ItemsSource="{Binding Pages}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
@@ -32,12 +38,25 @@
             </StackLayout>
 
             <Label Text="Мы в Instagram" Margin="10" TextColor="Black">
+                 <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="iOS" Value="NotoSans-Regular"/>
+                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped1"/>
                 </Label.GestureRecognizers>
             </Label>
 
-            <Button Text="Выйти" Visual="Material" Margin="10" Command="{Binding ExitCommand}"/>
+            <Button Text="Выйти" Visual="Material" Command="{Binding ExitCommand}">
+                <Button.Margin>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="10,10,10,30"/>
+                        <On Platform="Android" Value="10"/>
+                    </OnPlatform>
+                </Button.Margin>
+            </Button>
         </StackLayout>
     </ScrollView>
 </ContentPage>

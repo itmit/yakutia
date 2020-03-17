@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.CompetitionsPage">
     <NavigationPage.TitleView>
@@ -12,12 +13,24 @@
     <ContentPage.Content>
         <!--Страница конкурсы-->
         <StackLayout Margin="20" Spacing="25">
-            <Label Text="• РЕГИОНАЛЬНЫЕ" TextColor="Black" FontSize="Body" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+            <Label Text="• РЕГИОНАЛЬНЫЕ" TextColor="Black" FontSize="Body">
+                    <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="iOS" Value="NotoSans-Regular"/>
+                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                            </OnPlatform>
+                    </Label.FontFamily>
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenUpRegionalContests}" NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="• ФЕДЕРАЛЬНЫЕ" TextColor="Black" FontSize="Body" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+            <Label Text="• ФЕДЕРАЛЬНЫЕ" TextColor="Black" FontSize="Body">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="system:String">
+                                <On Platform="iOS" Value="NotoSans-Regular"/>
+                                <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+                            </OnPlatform>
+                        </Label.FontFamily>
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenUpFederalContests}"  NumberOfTapsRequired="1"/>
                 </Label.GestureRecognizers>

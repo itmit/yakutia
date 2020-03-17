@@ -8,7 +8,7 @@
              xmlns:partials="clr-namespace:Yakutia.Views.Partials;assembly=Yakutia"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.ChatPage"
-             BackgroundColor="#E3F2FD">
+             BackgroundColor="#BBDEFB">
     <NavigationPage.TitleView>
         <Label Text="Чат" Style="{StaticResource TitleLabel}"/>
     </NavigationPage.TitleView>
@@ -20,14 +20,15 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <!--Страница чат-->
-        <Grid RowSpacing="0" 
+        <ScrollView>
+            <Grid RowSpacing="0" 
                   ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="1" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <controls:ExtendedListView Grid.Row="0" BackgroundColor="#BBDEFB"
+            <controls:ExtendedListView Grid.Row="0" BackgroundColor="Transparent"
                                            ItemTemplate="{StaticResource MessageTemplateSelector}" 
                                            ItemsSource="{Binding Messages}" 
                                            Margin="0"
@@ -54,5 +55,6 @@
             <partials:ChatInputBarView Grid.Row="2" BackgroundColor="White"
                                            x:Name="ChatInput" Padding="0,0,10,0"/>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

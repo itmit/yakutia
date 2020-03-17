@@ -34,7 +34,8 @@ namespace Yakutia.PageModels
 			{
 				eventDates.Add(new SpecialDate(dateTime)
 				{
-					BackgroundColor = Color.LightCoral
+					BackgroundColor = Color.LightCoral,
+                    Selectable = true
 				});
 			}
 
