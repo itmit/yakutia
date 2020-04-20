@@ -7,6 +7,7 @@
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
+             Title="{Binding Level}"
              x:Class="Yakutia.Pages.CompetitionsDetailPage">
     <ContentPage.Content>
         <!--Страница с перечнем конкурсов-->

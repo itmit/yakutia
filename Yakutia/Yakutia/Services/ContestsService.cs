@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -23,7 +24,7 @@ namespace Yakutia.Services
 			_mapper = new Mapper(new MapperConfiguration(cfg =>
 			{
 				cfg.CreateMap<ContestDto, Contest>()
-				   .ForMember(news => news.ImageSource, o => o.MapFrom(dto => Domain + dto.ImageSource));
+				   .ForMember(news => news.ImageSource, o => o.MapFrom(dto => string.IsNullOrWhiteSpace(dto.ImageSource) ? string.Empty : Domain + dto.ImageSource));
 			}));
 		}
 

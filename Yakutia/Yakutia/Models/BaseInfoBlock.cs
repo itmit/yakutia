@@ -19,5 +19,7 @@
 			get;
 			set;
 		}
+
+		public bool HasImage => !string.IsNullOrEmpty(ImageSource);
 	}
 }

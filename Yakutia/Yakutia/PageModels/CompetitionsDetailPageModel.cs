@@ -15,7 +15,12 @@ namespace Yakutia.PageModels
 
 		private Contest _selectedNews;
 		private User _user;
-		private string _level;
+
+		public string Level
+		{
+			get;
+			private set;
+		}
 
 		public override void Init(object initData)
 		{
@@ -25,7 +30,7 @@ namespace Yakutia.PageModels
 					   .SingleOrDefault();
 			if (initData is string level)
 			{
-				_level = level;
+				Level = level;
 				RefreshCommand.Execute(null);
 			}
 		}
@@ -34,7 +39,7 @@ namespace Yakutia.PageModels
 			new FreshAwaitCommand((obj, tcs) =>
 			{
 				IsRefreshing = true;
-				LoadData(_level);
+				LoadData(Level);
 				IsRefreshing = false;
 				tcs.SetResult(true);
 			});
