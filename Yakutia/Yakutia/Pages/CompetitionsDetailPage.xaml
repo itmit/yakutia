@@ -7,8 +7,11 @@
              xmlns:views="clr-namespace:Yakutia.Views;assembly=Yakutia"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
-             Title="{Binding Level}"
              x:Class="Yakutia.Pages.CompetitionsDetailPage">
+    <NavigationPage.TitleView>
+        <Label Text="{Binding Level}" Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Страница с перечнем конкурсов-->
         <pullToRefresh:PullToRefreshLayout

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:design="clr-namespace:Yakutia.Design"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.GrantsPage">
     <NavigationPage.TitleView>
@@ -14,9 +15,9 @@
         <!--Страница президентские гранты-->
         <StackLayout Spacing="10" Margin="20">
             <Image Source="pic_fpg_1920w.png" Aspect="AspectFill" HorizontalOptions="Center" Margin="0,15" WidthRequest="200"/>
-            <Label Text="О конкурсе:" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold"/>
+            <Label Text="О конкурсе:" TextColor="Black" FontFamily="{x:Static design:DesignClass.NotoSansBold}"/>
             <WebView HeightRequest="400" Source="{Binding Html}"/>
-            <Label Text="• Для победителей" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+            <Label Text="• Для победителей" TextColor="Black" FontFamily="{x:Static design:DesignClass.NotoSansBold}">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}">
                         <TapGestureRecognizer.CommandParameter>
@@ -25,7 +26,7 @@
                     </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="• Для участников" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+            <Label Text="• Для участников" TextColor="Black" FontFamily="{x:Static design:DesignClass.NotoSansBold}">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}">
                         <TapGestureRecognizer.CommandParameter>
@@ -34,7 +35,7 @@
                     </TapGestureRecognizer>
                 </Label.GestureRecognizers>
             </Label>
-            <Label Text="• Список победителей с РС (Я)" TextColor="Black" FontFamily="NotoSans-Bold.ttf#NotoSans-Bold">
+            <Label Text="• Список победителей с РС (Я)" TextColor="Black" FontFamily="{x:Static design:DesignClass.NotoSansBold}">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenGrantsDetailCommand}" >
                         <TapGestureRecognizer.CommandParameter>
