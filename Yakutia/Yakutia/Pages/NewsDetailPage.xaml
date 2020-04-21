@@ -6,6 +6,11 @@
              xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.NewsDetailPage">
+
+    <NavigationPage.TitleView>
+        <Label Style="{StaticResource TitleLabel}"/>
+    </NavigationPage.TitleView>
+
     <ContentPage.Content>
         <!--Детальная страница новостей-->
         <StackLayout Margin="20">
