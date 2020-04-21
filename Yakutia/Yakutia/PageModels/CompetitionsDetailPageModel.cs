@@ -31,8 +31,24 @@ namespace Yakutia.PageModels
 			if (initData is string level)
 			{
 				Level = level;
+				Title = FirstCharToUpper(Level);
 				RefreshCommand.Execute(null);
 			}
+		}
+		private string FirstCharToUpper(string input)
+		{
+			if (string.IsNullOrEmpty(input))
+			{
+				throw new ArgumentException("ARGH!");
+			}
+
+			return input.First().ToString().ToUpper() + input.Substring(1);
+		}
+
+		public string Title
+		{
+			get;
+			private set;
 		}
 
 		public ICommand RefreshCommand =>
