@@ -6,7 +6,7 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              mc:Ignorable="d"
              x:Class="Yakutia.Pages.MainMasterPage"
-             Title="Master">
+             Title="Меню">
 
     <ContentPage.BackgroundColor>
         <OnPlatform x:TypeArguments="Color">

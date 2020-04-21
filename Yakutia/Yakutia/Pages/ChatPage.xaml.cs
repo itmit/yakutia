@@ -13,9 +13,9 @@ namespace Yakutia.Pages
             InitializeComponent();
         }
 
-		public void OnListTapped(object sender, ItemTappedEventArgs e)
-		{
-			ChatInput.UnFocusEntry();
-		}
+        public void OnListTapped(object sender, ItemTappedEventArgs e)
+        {
+            ChatInput.UnFocusEntry();
+        }
 	}
 }
